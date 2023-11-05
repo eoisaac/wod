@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.eoisaac.wod"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.eoisaac.wod"
