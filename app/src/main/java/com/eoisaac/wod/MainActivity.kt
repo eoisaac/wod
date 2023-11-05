@@ -13,20 +13,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        replaplaceFragment(WorkoutFragment())
+        replaceFragment(WorkoutFragment())
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.navigation_workout -> replaplaceFragment(WorkoutFragment())
-                R.id.navigation_exercises -> replaplaceFragment(ExercisesFragment())
-                R.id.navigation_profile -> replaplaceFragment(ProfileFragment())
-//                else -> {}
+                R.id.navigation_workout -> replaceFragment(WorkoutFragment())
+                R.id.navigation_exercises -> replaceFragment(ExercisesFragment())
+                R.id.navigation_profile -> replaceFragment(ProfileFragment())
+                // else -> {}
             }
             true
         }
     }
 
-    private fun replaplaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.main_activity_frame_layout, fragment)
         transaction.commit()

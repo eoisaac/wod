@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--========== Primary colors ==========-->
+    <color name="primary_50">#ff1a2e05</color>
+    <color name="primary_100">#ff052e16</color>
+    <color name="primary_200">#ff14532d</color>
+    <color name="primary_300">#ff365314</color>
+    <color name="primary_400">#ff3f6212</color>
+    <color name="primary_500">#ff4d7c0f</color>
+    <color name="primary_600">#ff65a34a</color>
+    <color name="primary_700">#ff84cc16</color>
+    <color name="primary_800">#ffa3e635</color>
+    <color name="primary_900">#ffbef264</color>
+    <color name="primary_950">#ffd9f99d</color>
+
+    <!--========= Status colors =========-->
+    <!-- Success -->
+    <color name="success_50">#ff052e16</color>
+    <color name="success_100">#ff14532d</color>
+    <color name="success_200">#ff365314</color>
+    <color name="success_300">#ff3f6212</color>
+    <color name="success_400">#ff4d7c0f</color>
+    <color name="success_500">#ff65a34a</color>
+    <color name="success_600">#ff84cc16</color>
+    <color name="success_700">#ffa3e635</color>
+    <color name="success_800">#ffbef264</color>
+    <color name="success_900">#ffd9f99d</color>
+    <color name="success_950">#fff0fdf4</color>
+
+    <!-- Warning -->
+    <color name="warning_50">#ff422006</color>
+    <color name="warning_100">#ff713f12</color>
+    <color name="warning_200">#ff854d0e</color>
+    <color name="warning_300">#ffa16207</color>
+    <color name="warning_400">#ffca8a04</color>
+    <color name="warning_500">#ffeab308</color>
+    <color name="warning_600">#fffacc15</color>
+    <color name="warning_700">#fffde047</color>
+    <color name="warning_800">#fffef08a</color>
+    <color name="warning_900">#fffef9c3</color>
+    <color name="warning_950">#fffefce8</color>
+
+    <!-- Danger -->
+    <color name="danger_50">#ff450a0a</color>
+    <color name="danger_100">#ff7f1d1d</color>
+    <color name="danger_200">#ff991b1b</color>
+    <color name="danger_300">#ffb91c1c</color>
+    <color name="danger_400">#ffdc2626</color>
+    <color name="danger_500">#ffef4444</color>
+    <color name="danger_600">#fff87171</color>
+    <color name="danger_700">#fffca5a5</color>
+    <color name="danger_800">#fffecaca</color>
+    <color name="danger_900">#fffee2e2</color>
+    <color name="danger_950">#fffef2f2</color>
+
+    <!--========== Base colors ==========-->
+    <color name="base_50">#ff0a0a0a</color>
+    <color name="base_100">#ff171717</color>
+    <color name="base_200">#ff262626</color>
+    <color name="base_300">#ff404040</color>
+    <color name="base_400">#ff525252</color>
+    <color name="base_500">#ff737373</color>
+    <color name="base_600">#ffa3a3a3</color>
+    <color name="base_700">#ffd4d4d4</color>
+    <color name="base_800">#ffe5e5e5</color>
+    <color name="base_900">#fff5f5f5</color>
+    <color name="base_950">#fff0f0f0</color>
+
+    <!-- Neutral -->
+    <color name="black">#ffffffff</color>
+    <color name="white">#ff000000</color>
+</resources>
