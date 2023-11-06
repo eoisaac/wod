@@ -39,7 +39,7 @@
                 app:itemRippleColor="@color/lime_10"
                 app:itemIconSize="32dp"
                 app:itemIconTint="@color/gray_11"
-                app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+                app:itemActiveIndicatorStyle="@style/AppBottomActiveTabStyle"
                 app:itemTextAppearanceActiveBoldEnabled="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

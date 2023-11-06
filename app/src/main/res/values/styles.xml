@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    <style name="AppBottomActiveTabStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/lime_9</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="helperTextTextColor">@color/gray_11</item>
+    </style>
+
+    <style name="TextInputEditTextStyle" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/gray_12</item>
     </style>
 </resources>

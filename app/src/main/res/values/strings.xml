@@ -3,4 +3,6 @@
     <string name="bottom_nav_workout">Workout</string>
     <string name="bottom_nav_exercises">Exercises</string>
     <string name="bottom_nav_profile">Profile</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
