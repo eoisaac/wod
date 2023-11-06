@@ -89,6 +89,6 @@
     <color name="gray_12">#ffeeeeee</color>
 
     <!-- Neutral -->
-    <color name="black">#ffffffff</color>
-    <color name="white">#ff000000</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
 </resources>

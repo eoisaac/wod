@@ -8,7 +8,7 @@
         <item name="colorSecondaryVariant">@color/iris_10</item>
         <item name="colorOnSecondary">@color/gray_12</item>
 
-        <item name="android:statusBarColor" >@color/lime_9</item>
+        <item name="android:statusBarColor" >@color/gray_1</item>
         <item name="android:windowBackground">@color/gray_1</item>
     </style>
 
