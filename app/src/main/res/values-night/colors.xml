@@ -1,70 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--========== Primary colors ==========-->
-    <color name="primary_50">#ff1a2e05</color>
-    <color name="primary_100">#ff052e16</color>
-    <color name="primary_200">#ff14532d</color>
-    <color name="primary_300">#ff365314</color>
-    <color name="primary_400">#ff3f6212</color>
-    <color name="primary_500">#ff4d7c0f</color>
-    <color name="primary_600">#ff65a34a</color>
-    <color name="primary_700">#ff84cc16</color>
-    <color name="primary_800">#ffa3e635</color>
-    <color name="primary_900">#ffbef264</color>
-    <color name="primary_950">#ffd9f99d</color>
+    <color name="lime_1">#ff11130c</color>
+    <color name="lime_2">#ff151a10</color>
+    <color name="lime_3">#ff1f2917</color>
+    <color name="lime_4">#ff29371d</color>
+    <color name="lime_5">#ff334423</color>
+    <color name="lime_6">#ff3d522a</color>
+    <color name="lime_7">#ff496231</color>
+    <color name="lime_8">#ff577538</color>
+    <color name="lime_9">#ffbdee63</color>
+    <color name="lime_10">#ffd4ff70</color>
+    <color name="lime_11">#ffbde56c</color>
+    <color name="lime_12">#ffe3f7ba</color>
+
+    <!--========== Secondary colors ==========-->
+    <color name="iris_1">#ff13131e</color>
+    <color name="iris_2">#ff171625</color>
+    <color name="iris_3">#ff202248</color>
+    <color name="iris_4">#ff262a65</color>
+    <color name="iris_5">#ff303374</color>
+    <color name="iris_6">#ff3d3e82</color>
+    <color name="iris_7">#ff4a4a95</color>
+    <color name="iris_8">#ff5958b1</color>
+    <color name="iris_9">#ff5b5bd6</color>
+    <color name="iris_10">#ff6e6ade</color>
+    <color name="iris_11">#ffb1a9ff</color>
+    <color name="iris_12">#ffe0dffe</color>
+
 
     <!--========= Status colors =========-->
     <!-- Success -->
-    <color name="success_50">#ff052e16</color>
-    <color name="success_100">#ff14532d</color>
-    <color name="success_200">#ff365314</color>
-    <color name="success_300">#ff3f6212</color>
-    <color name="success_400">#ff4d7c0f</color>
-    <color name="success_500">#ff65a34a</color>
-    <color name="success_600">#ff84cc16</color>
-    <color name="success_700">#ffa3e635</color>
-    <color name="success_800">#ffbef264</color>
-    <color name="success_900">#ffd9f99d</color>
-    <color name="success_950">#fff0fdf4</color>
+    <color name="green_1">#ff0e1512</color>
+    <color name="green_2">#ff121b17</color>
+    <color name="green_3">#ff132d21</color>
+    <color name="green_4">#ff113b29</color>
+    <color name="green_5">#ff174933</color>
+    <color name="green_6">#ff20573e</color>
+    <color name="green_7">#ff28684a</color>
+    <color name="green_8">#ff2f7c57</color>
+    <color name="green_9">#ff30a46c</color>
+    <color name="green_10">#ff33b074</color>
+    <color name="green_11">#ff3dd68c</color>
+    <color name="green_12">#ffb1f1cb</color>
 
     <!-- Warning -->
-    <color name="warning_50">#ff422006</color>
-    <color name="warning_100">#ff713f12</color>
-    <color name="warning_200">#ff854d0e</color>
-    <color name="warning_300">#ffa16207</color>
-    <color name="warning_400">#ffca8a04</color>
-    <color name="warning_500">#ffeab308</color>
-    <color name="warning_600">#fffacc15</color>
-    <color name="warning_700">#fffde047</color>
-    <color name="warning_800">#fffef08a</color>
-    <color name="warning_900">#fffef9c3</color>
-    <color name="warning_950">#fffefce8</color>
+    <color name="yellow_1">#ff14120b</color>
+    <color name="yellow_2">#ff1b180f</color>
+    <color name="yellow_3">#ff2d2305</color>
+    <color name="yellow_4">#ff362b00</color>
+    <color name="yellow_5">#ff433500</color>
+    <color name="yellow_6">#ff524202</color>
+    <color name="yellow_7">#ff665417</color>
+    <color name="yellow_8">#ff836a21</color>
+    <color name="yellow_9">#ffffe629</color>
+    <color name="yellow_10">#ffff57</color>
+    <color name="yellow_11">#fff5e147</color>
+    <color name="yellow_12">#fff6eeb4</color>
+
 
     <!-- Danger -->
-    <color name="danger_50">#ff450a0a</color>
-    <color name="danger_100">#ff7f1d1d</color>
-    <color name="danger_200">#ff991b1b</color>
-    <color name="danger_300">#ffb91c1c</color>
-    <color name="danger_400">#ffdc2626</color>
-    <color name="danger_500">#ffef4444</color>
-    <color name="danger_600">#fff87171</color>
-    <color name="danger_700">#fffca5a5</color>
-    <color name="danger_800">#fffecaca</color>
-    <color name="danger_900">#fffee2e2</color>
-    <color name="danger_950">#fffef2f2</color>
+    <color name="red_1">#ff191111</color>
+    <color name="red_2">#ff201314</color>
+    <color name="red_3">#ff3b1219</color>
+    <color name="red_4">#ff500f1c</color>
+    <color name="red_5">#ff611623</color>
+    <color name="red_6">#ff72232d</color>
+    <color name="red_7">#ff8c333a</color>
+    <color name="red_8">#ffb54548</color>
+    <color name="red_9">#ffe5484d</color>
+    <color name="red_10">#ffec5d5e</color>
+    <color name="red_11">#ffff9592</color>
+    <color name="red_12">#ffffd1d9</color>
+
 
     <!--========== Base colors ==========-->
-    <color name="base_50">#ff0a0a0a</color>
-    <color name="base_100">#ff171717</color>
-    <color name="base_200">#ff262626</color>
-    <color name="base_300">#ff404040</color>
-    <color name="base_400">#ff525252</color>
-    <color name="base_500">#ff737373</color>
-    <color name="base_600">#ffa3a3a3</color>
-    <color name="base_700">#ffd4d4d4</color>
-    <color name="base_800">#ffe5e5e5</color>
-    <color name="base_900">#fff5f5f5</color>
-    <color name="base_950">#fff0f0f0</color>
+    <color name="gray_1">#ff111111</color>
+    <color name="gray_2">#ff191919</color>
+    <color name="gray_3">#ff222222</color>
+    <color name="gray_4">#ff2a2a2a</color>
+    <color name="gray_5">#ff313131</color>
+    <color name="gray_6">#ff3a3a3a</color>
+    <color name="gray_7">#ff484848</color>
+    <color name="gray_8">#ff606060</color>
+    <color name="gray_9">#ff6e6e6e</color>
+    <color name="gray_10">#ff7b7b7b</color>
+    <color name="gray_11">#ffb4b4b4</color>
+    <color name="gray_12">#ffeeeeee</color>
 
     <!-- Neutral -->
     <color name="black">#ffffffff</color>
