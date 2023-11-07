@@ -89,4 +89,7 @@
     <!-- Neutral -->
     <color name="black">#ff000000</color>
     <color name="white">#ffffffff</color>
+
+    <color name="gray_dark">#ff202020</color>
+    <color name="gray_light">#fffcfcfc</color>
 </resources>

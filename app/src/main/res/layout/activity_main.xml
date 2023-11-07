@@ -38,7 +38,7 @@
                 app:itemTextColor="@color/gray_11"
                 app:itemRippleColor="@color/lime_10"
                 app:itemIconSize="32dp"
-                app:itemIconTint="@color/gray_11"
+                app:itemIconTint="@color/gray_dark"
                 app:itemActiveIndicatorStyle="@style/AppBottomActiveTabStyle"
                 app:itemTextAppearanceActiveBoldEnabled="false"
                 app:layout_constraintStart_toStartOf="parent"

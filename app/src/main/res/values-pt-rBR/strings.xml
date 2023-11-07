@@ -5,4 +5,9 @@
     <string name="bottom_nav_exercises">Exercícios</string>
     <string name="email">Email</string>
     <string name="password">Senha</string>
+    <string name="sign_in">Entrar</string>
+    <string name="remember_me">Manter-me conectado</string>
+    <string name="forgot_password">Esqueceu sua senha?</string>
+    <string name="dont_have_an_account">Não possui uma conta?</string>
+    <string name="sign_up">Cadastrar</string>
 </resources>

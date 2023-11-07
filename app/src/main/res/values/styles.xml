@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Bottom Tab Navigation -->
     <style name="AppBottomActiveTabStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/lime_9</item>
     </style>
 
+    <!-- Text -->
     <style name="TextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxCornerRadiusBottomEnd">16dp</item>
-        <item name="boxCornerRadiusTopEnd">16dp</item>
-        <item name="boxCornerRadiusBottomStart">16dp</item>
         <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
         <item name="helperTextTextColor">@color/gray_11</item>
+        <item name="endIconTint">@color/gray_11</item>
     </style>
 
     <style name="TextInputEditTextStyle" parent="Widget.Material3.TextInputEditText.OutlinedBox">
         <item name="android:textColor">@color/gray_12</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="PrimaryButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:backgroundTint">@color/lime_9</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="LinkButtonStyle" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <!-- Checkboxes -->
+    <style name="CheckboxStyle" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/gray_11</item>
+        <item name="android:textSize">16sp</item>
+        <item name="buttonIconTint">@color/gray_dark</item>
     </style>
 </resources>
