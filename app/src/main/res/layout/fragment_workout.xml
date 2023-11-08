@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".WorkoutFragment"
+        tools:context=".views.WorkoutFragment"
 >
     <androidx.constraintlayout.widget.ConstraintLayout
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -25,10 +25,10 @@
         />
 
         <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/time_of_day_text_view"
+                android:id="@+id/time_greeting_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Good Morning!"
+                android:text="-"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/gray_11"
@@ -43,7 +43,7 @@
                 app:cardCornerRadius="999dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/greeting_text_view"
-                app:layout_constraintBottom_toBottomOf="@+id/time_of_day_text_view"
+                app:layout_constraintBottom_toBottomOf="@+id/time_greeting_text_view"
         >
             <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="wrap_content"

@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.eoisaac.wod.ExercisesFragment
-import com.eoisaac.wod.ProfileFragment
 import com.eoisaac.wod.R
-import com.eoisaac.wod.WorkoutFragment
 import com.eoisaac.wod.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationBarView
 
