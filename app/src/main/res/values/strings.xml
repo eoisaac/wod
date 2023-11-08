@@ -15,4 +15,7 @@
     <string name="confirm_password">Confirm password</string>
     <string name="sign_in_title">Sign in to your account</string>
     <string name="sign_up_title">Create your account</string>
+    <string name="morning_greeting">Good morning!</string>
+    <string name="afternoon_greeting">Good afternoon!</string>
+    <string name="evening_greeting">Good evening!</string>
 </resources>
