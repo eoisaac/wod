@@ -29,6 +29,7 @@
                 android:id="@+id/profile_picture_card_view"
                 android:layout_width="128dp"
                 android:layout_height="128dp"
+                style="@style/BorderCard"
                 app:cardCornerRadius="999dp"
                 android:layout_marginTop="64dp"
                 app:layout_constraintTop_toTopOf="parent"

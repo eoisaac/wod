@@ -28,7 +28,7 @@
                 android:id="@+id/time_greeting_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="Greeting"
                 style="@style/BodyTextStyle"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/greeting_text_view"
@@ -39,6 +39,7 @@
                 android:id="@+id/profile_picture_card_view"
                 android:layout_width="54dp"
                 android:layout_height="54dp"
+                style="@style/BorderCard"
                 app:cardCornerRadius="999dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/greeting_text_view"
@@ -51,64 +52,82 @@
             />
         </com.google.android.material.card.MaterialCardView>
 
-        <RelativeLayout
-                android:id="@+id/progress_indicator_container"
-                android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+                android:id="@+id/progress_card_container"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
-                app:layout_constraintStart_toStartOf="parent"
+                style="@style/NoBorderCard"
                 app:layout_constraintTop_toBottomOf="@id/time_greeting_text_view"
-                app:layout_constraintEnd_toStartOf="@id/progress_message_text_view"
-        >
-            <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/circular_progress_indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:indicatorSize="96dp"
-                    android:indeterminate="false"
-                    app:trackCornerRadius="16dp"
-                    app:trackThickness="10dp"
-                    app:trackColor="@color/gray_6"
-                    android:progress="75"
-            />
-            <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/progress_indicator_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="75%"
-                    android:layout_centerInParent="true"
-                    android:textAlignment="center"
-                    style="@style/SubtitleTextStyle"
-                    android:layout_marginTop="16dp"
-            />
-        </RelativeLayout>
-
-        <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/progress_message_text_view"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Wow! Your daily workout is almost done!"
-                style="@style/BodyTextStyle"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@color/gray_12"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toEndOf="@id/progress_indicator_container"
-                app:layout_constraintTop_toTopOf="@id/progress_indicator_container"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-        />
-        <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/total_exercises_text_view"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="6 of 8 completed!"
-                style="@style/BodyTextStyle"
-                android:layout_marginTop="12dp"
-                app:layout_constraintStart_toStartOf="@id/progress_message_text_view"
-                app:layout_constraintTop_toBottomOf="@id/progress_message_text_view"
-                app:layout_constraintEnd_toEndOf="@id/progress_message_text_view"
-        />
+        >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".views.SignInActivity"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+            >
+                <RelativeLayout
+                        android:id="@+id/progress_indicator_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                >
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                            android:id="@+id/circular_progress_indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:indicatorSize="96dp"
+                            android:indeterminate="false"
+                            app:trackCornerRadius="16dp"
+                            app:trackThickness="10dp"
+                            app:trackColor="@color/gray_6"
+                            android:progress="75"
+                    />
+                    <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/progress_indicator_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="75%"
+                            android:layout_centerInParent="true"
+                            android:textAlignment="center"
+                            style="@style/SubtitleTextStyle"
+                            android:layout_marginTop="16dp"
+                    />
+                </RelativeLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/progress_message_text_view"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Wow! Your daily workout is almost done!"
+                        style="@style/BodyTextStyle"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/gray_12"
+                        android:layout_marginStart="24dp"
+                        app:layout_constraintStart_toEndOf="@+id/progress_indicator_container"
+                        app:layout_constraintTop_toTopOf="@+id/progress_indicator_container"
+                        app:layout_constraintBottom_toTopOf="@+id/total_exercises_text_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+
+                />
+                <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/total_exercises_text_view"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="6 of 8 completed!"
+                        style="@style/BodyTextStyle"
+                        app:layout_constraintTop_toBottomOf="@id/progress_message_text_view"
+                        app:layout_constraintStart_toStartOf="@id/progress_message_text_view"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
