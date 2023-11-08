@@ -1,4 +1,4 @@
-package com.eoisaac.wod
+package com.eoisaac.wod.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -21,16 +21,23 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setupOnClickListeners() {
         binding.navigateToSignUpButton.setOnClickListener(this)
+        binding.signInButton.setOnClickListener(this)
     }
 
     override fun onClick(button: View) {
         when (button.id) {
             binding.navigateToSignUpButton.id -> navigateToSignUpActivity()
+            binding.signInButton.id -> navigateToMainActivity()
         }
     }
 
     private fun navigateToSignUpActivity() {
         val intent = Intent(this, SignUpActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 }

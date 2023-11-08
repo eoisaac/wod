@@ -3,9 +3,10 @@
     <!-- Bottom Tab Navigation -->
     <style name="AppBottomActiveTabStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/lime_9</item>
+        <item name="itemTextColor">@color/gray_11</item>
     </style>
 
-    <!-- Text -->
+    <!-- Input -->
     <style name="TextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusTopStart">16dp</item>
         <item name="boxCornerRadiusTopEnd">16dp</item>
@@ -16,6 +17,13 @@
     </style>
 
     <style name="TextInputEditTextStyle" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/gray_12</item>
+    </style>
+
+    <!-- Text -->
+    <style name="TitleTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/gray_12</item>
     </style>
 

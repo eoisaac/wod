@@ -1,4 +1,4 @@
-package com.eoisaac.wod
+package com.eoisaac.wod.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
