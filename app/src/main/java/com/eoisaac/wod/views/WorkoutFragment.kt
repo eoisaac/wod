@@ -1,16 +1,18 @@
 package com.eoisaac.wod.views
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.eoisaac.wod.R
 import com.eoisaac.wod.databinding.FragmentWorkoutBinding
 import com.eoisaac.wod.utils.getTimeBasedGreeting
 import java.util.*
 
 
-class WorkoutFragment : Fragment() {
+class WorkoutFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentWorkoutBinding
 
     override fun onCreateView(
@@ -22,6 +24,25 @@ class WorkoutFragment : Fragment() {
         val greeting = getTimeBasedGreeting(requireContext(), Date())
         binding.timeGreetingTextView.text = greeting
 
+        setupOnClickListeners()
+
         return binding.root
+    }
+
+    private fun setupOnClickListeners() {
+        binding.navigateToAllWorkoutsButton.setOnClickListener(this)
+    }
+
+    override fun onClick(button: View) {
+        when (button.id) {
+            binding.navigateToAllWorkoutsButton.id -> navigateToAllWorkoutsFragment()
+        }
+    }
+
+    private fun navigateToAllWorkoutsFragment() {
+        // TODO: Fix active bottom tab when navigating to AllWorkoutsFragment from WorkoutFragment (is not highlighted)
+        val transaction = activity?.supportFragmentManager?.beginTransaction()
+        transaction?.replace(R.id.main_activity_frame_layout, AllWorkoutsFragment())
+        transaction?.commit()
     }
 }

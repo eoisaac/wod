@@ -17,6 +17,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+
         setupOnClickListeners()
 
         return binding.root
