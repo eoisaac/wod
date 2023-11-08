@@ -13,4 +13,6 @@
     <string name="name">Nome</string>
     <string name="already_have_an_account">Já possui uma conta?</string>
     <string name="confirm_password">Confirmar senha</string>
+    <string name="sign_in_title">Acesse sua conta</string>
+    <string name="sign_up_title">Crie sua conta</string>
 </resources>
