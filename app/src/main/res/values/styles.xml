@@ -27,6 +27,17 @@
         <item name="android:textColor">@color/gray_12</item>
     </style>
 
+    <style name="SubtitleTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gray_12</item>
+    </style>
+
+    <style name="BodyTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_11</item>
+    </style>
+
     <!-- Buttons -->
     <style name="PrimaryButtonStyle" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/gray_dark</item>

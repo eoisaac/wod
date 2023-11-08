@@ -7,11 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.eoisaac.wod.databinding.FragmentExercisesBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ExercisesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class ExercisesFragment : Fragment() {
     private lateinit var binding: FragmentExercisesBinding
 

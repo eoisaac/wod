@@ -18,4 +18,5 @@
     <string name="morning_greeting">Good morning!</string>
     <string name="afternoon_greeting">Good afternoon!</string>
     <string name="evening_greeting">Good evening!</string>
+    <string name="profile">Profile</string>
 </resources>

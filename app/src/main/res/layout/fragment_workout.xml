@@ -29,9 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
-                android:textSize="16sp"
+                style="@style/BodyTextStyle"
                 android:textStyle="bold"
-                android:textColor="@color/gray_11"
                 app:layout_constraintStart_toStartOf="@id/greeting_text_view"
                 app:layout_constraintTop_toBottomOf="@id/greeting_text_view"
         />

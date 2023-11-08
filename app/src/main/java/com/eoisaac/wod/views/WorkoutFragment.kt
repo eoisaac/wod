@@ -9,11 +9,7 @@ import com.eoisaac.wod.databinding.FragmentWorkoutBinding
 import com.eoisaac.wod.utils.getTimeBasedGreeting
 import java.util.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [WorkoutFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class WorkoutFragment : Fragment() {
     private lateinit var binding: FragmentWorkoutBinding
 
