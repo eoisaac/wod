@@ -13,17 +13,17 @@
             tools:context=".views.SignInActivity"
             android:padding="24dp"
     >
-<!--        <com.google.android.material.textview.MaterialTextView-->
-<!--                android:id="@+id/sign_in_title"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="0dp"-->
-<!--                android:text="@string/profile"-->
-<!--                style="@style/TitleTextStyle"-->
-<!--                android:layout_marginTop="24dp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--        />-->
+        <!--        <com.google.android.material.textview.MaterialTextView-->
+        <!--                android:id="@+id/sign_in_title"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="0dp"-->
+        <!--                android:text="@string/profile"-->
+        <!--                style="@style/TitleTextStyle"-->
+        <!--                android:layout_marginTop="24dp"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--        />-->
 
         <com.google.android.material.card.MaterialCardView
                 android:id="@+id/profile_picture_card_view"
@@ -67,6 +67,6 @@
         />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

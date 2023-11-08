@@ -19,4 +19,6 @@
     <string name="afternoon_greeting">Good afternoon!</string>
     <string name="evening_greeting">Good evening!</string>
     <string name="profile">Profile</string>
+    <string name="see_all">See all</string>
+    <string name="todays_workout">Today\'s workout</string>
 </resources>
