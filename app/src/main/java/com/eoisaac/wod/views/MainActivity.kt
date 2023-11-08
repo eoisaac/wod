@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navigation_workout -> replaceFragment(WorkoutFragment())
-            R.id.navigation_exercises -> replaceFragment(ExercisesFragment())
+            R.id.navigation_exercises -> replaceFragment(AllWorkoutsFragment())
             R.id.navigation_profile -> replaceFragment(ProfileFragment())
             // else -> {}
         }

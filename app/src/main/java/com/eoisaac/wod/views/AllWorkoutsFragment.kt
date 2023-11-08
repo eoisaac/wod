@@ -5,17 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.eoisaac.wod.databinding.FragmentExercisesBinding
+import com.eoisaac.wod.databinding.FragmentAllWorkoutsBinding
 
 
-class ExercisesFragment : Fragment() {
-    private lateinit var binding: FragmentExercisesBinding
+class AllWorkoutsFragment : Fragment() {
+    private lateinit var binding: FragmentAllWorkoutsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentExercisesBinding.inflate(inflater, container, false)
+        binding = FragmentAllWorkoutsBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

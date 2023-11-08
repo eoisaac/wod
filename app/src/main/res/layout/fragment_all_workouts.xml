@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.ExercisesFragment"
+        tools:context=".views.AllWorkoutsFragment"
 >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
                 android:id="@+id/exercises_title"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="Exercises Fragment"
+                android:text="All workouts"
                 style="@style/TitleTextStyle"
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="parent"
