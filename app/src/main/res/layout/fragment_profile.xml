@@ -14,7 +14,7 @@
             android:padding="24dp"
     >
         <!--        <com.google.android.material.textview.MaterialTextView-->
-        <!--                android:id="@+id/sign_in_title"-->
+        <!--                android:id="@+id/profile_title"-->
         <!--                android:layout_width="match_parent"-->
         <!--                android:layout_height="0dp"-->
         <!--                android:text="@string/profile"-->
@@ -35,7 +35,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-
         >
             <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="wrap_content"
@@ -66,7 +65,50 @@
                 app:layout_constraintEnd_toEndOf="parent"
         />
 
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/navigate_to_edit_profile_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="@string/edit_profile"
+                app:icon="@drawable/user_icon"
+                android:textAlignment="textStart"
+                android:paddingVertical="16dp"
+                style="@style/SecondaryLinkButtonStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_text_view"
+        />
 
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/navigate_to_preferences_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/preferences"
+                app:icon="@drawable/gear_icon"
+                android:textAlignment="textStart"
+                android:paddingVertical="16dp"
+                style="@style/SecondaryLinkButtonStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/navigate_to_edit_profile_button"
+        />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/sign_out_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/sign_out"
+                app:icon="@drawable/sign_out_icon"
+                android:textAlignment="textStart"
+                android:paddingVertical="16dp"
+                style="@style/DangerLinkButtonStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

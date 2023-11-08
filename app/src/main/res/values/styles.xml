@@ -63,13 +63,40 @@
         <item name="android:drawablePadding">16dp</item>
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingBottom">16dp</item>
+        <item name="itemIconSize">26dp</item>
     </style>
 
-    <style name="LinkButtonStyle" parent="Widget.Material3.Button.TextButton">
+    <style name="PrimaryLinkButtonStyle" parent="Widget.Material3.Button.TextButton">
         <item name="android:textSize">16sp</item>
         <item name="cornerRadius">16dp</item>
         <item name="android:minHeight">0dp</item>
         <item name="android:minWidth">0dp</item>
+        <item name="android:textColor">@color/lime_9</item>
+        <item name="iconTint">@color/lime_9</item>
+        <item name="rippleColor">@color/lime_4</item>
+        <item name="iconSize">26dp</item>
+    </style>
+
+    <style name="SecondaryLinkButtonStyle" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textColor">@color/gray_11</item>
+        <item name="iconTint">@color/gray_11</item>
+        <item name="rippleColor">@color/gray_4</item>
+        <item name="iconSize">26dp</item>
+    </style>
+
+    <style name="DangerLinkButtonStyle" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textColor">@color/red_11</item>
+        <item name="iconTint">@color/red_11</item>
+        <item name="rippleColor">@color/red_4</item>
+        <item name="iconSize">26dp</item>
     </style>
 
     <!-- Checkboxes -->

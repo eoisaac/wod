@@ -21,4 +21,7 @@
     <string name="profile">Profile</string>
     <string name="see_all">See all</string>
     <string name="todays_workout">Today\'s workout</string>
+    <string name="sign_out">Sign out</string>
+    <string name="preferences">Preferences</string>
+    <string name="edit_profile">Edit profile</string>
 </resources>
