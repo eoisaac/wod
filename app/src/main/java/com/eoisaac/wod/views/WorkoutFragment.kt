@@ -44,9 +44,7 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
     }
 
     private fun navigateToAllWorkoutsFragment() {
-        // TODO: Fix active bottom tab when navigating to AllWorkoutsFragment from WorkoutFragment (is not highlighted)
-        val transaction = activity?.supportFragmentManager?.beginTransaction()
-        transaction?.replace(R.id.main_activity_frame_layout, AllWorkoutsFragment())
-        transaction?.commit()
+        val mainActivity = requireActivity() as MainActivity
+        mainActivity.navigateToFragment(AllWorkoutsFragment(), R.id.navigation_all_workouts)
     }
 }

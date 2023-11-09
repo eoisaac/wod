@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navigation_workout -> replaceFragment(WorkoutFragment())
-            R.id.navigation_exercises -> replaceFragment(AllWorkoutsFragment())
+            R.id.navigation_all_workouts -> replaceFragment(AllWorkoutsFragment())
             R.id.navigation_profile -> replaceFragment(ProfileFragment())
             // else -> {}
         }
@@ -38,5 +38,10 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.main_activity_frame_layout, fragment)
         transaction.commit()
+    }
+
+    fun navigateToFragment(fragment: Fragment, itemId: Int = 0) {
+        this.replaceFragment(fragment)
+        binding.bottomNavigationView.selectedItemId = itemId
     }
 }
