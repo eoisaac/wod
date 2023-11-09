@@ -43,6 +43,7 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.room:room-runtime:2.6.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
     kapt("androidx.room:room-compiler:2.6.0")
 
     testImplementation("junit:junit:4.13.2")
