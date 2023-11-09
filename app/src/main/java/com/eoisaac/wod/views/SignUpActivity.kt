@@ -24,13 +24,24 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
         setupOnClickListeners()
     }
 
+    private fun doSignUp() {
+        val name = binding.nameTextInputField.text.toString()
+        val email = binding.emailTextInputField.text.toString()
+        val password = binding.passwordTextInputField.text.toString()
+        val confirmPassword = binding.confirmPasswordTextInputField.text.toString()
+
+        viewModel.signUpUser(name, email, password, confirmPassword)
+    }
+
     private fun setupOnClickListeners() {
         binding.navigateToSignInButton.setOnClickListener(this)
+        binding.signUpButton.setOnClickListener(this)
     }
 
     override fun onClick(button: View) {
         when (button.id) {
             binding.navigateToSignInButton.id -> navigateToSignInActivity()
+            binding.signUpButton.id -> doSignUp()
         }
     }
 

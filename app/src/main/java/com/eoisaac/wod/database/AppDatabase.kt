@@ -18,28 +18,27 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
-        private lateinit var INSTANCE: AppDatabase
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
 
         fun getDatabase(context: Context): AppDatabase {
-            if (!::INSTANCE.isInitialized) {
-                synchronized(AppDatabase::class.java) {
-                    INSTANCE = Room.databaseBuilder(
-                        context.applicationContext,
-                        AppDatabase::class.java,
-                        "appDatabase.db"
-                    )
-                        // .addMigrations(MIGRATION_1_2)
-                        .allowMainThreadQueries()
-                        .build()
-                }
-            }
-            return INSTANCE
-        }
-    }
+            val tempInstance = INSTANCE
 
-    private val MIGRATION_1_2 = object : Migration(1, 2) {
-        override fun migrate(database: SupportSQLiteDatabase) {
-            // Since we didn't alter the table, there's nothing else to do here.
+            if (tempInstance != null) {
+                return tempInstance
+            }
+
+            synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "app_database"
+                )
+                    .build()
+                INSTANCE = instance
+                return instance
+            }
+
         }
     }
 }

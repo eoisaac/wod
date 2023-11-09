@@ -7,20 +7,20 @@ import com.eoisaac.wod.database.models.User
 interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(user: User): Long
+    suspend fun insert(user: User): Long
 
     @Update
-    fun update(user: User): Int
+    suspend fun update(user: User): Int
 
     @Delete
-    fun delete(user: User): Int
+    suspend fun delete(user: User): Int
 
     @Query("SELECT * FROM users WHERE id = :id")
-    fun getById(id: Long): User
+    suspend fun getById(id: Long): User
 
     @Query("SELECT * FROM users WHERE email = :email")
-    fun getByEmail(email: String): User
+    suspend fun getByEmail(email: String): User
 
     @Query("SELECT * FROM users")
-    fun getAll(): List<User>
+    suspend fun getAll(): List<User>
 }
