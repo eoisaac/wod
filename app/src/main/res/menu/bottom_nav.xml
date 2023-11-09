@@ -8,7 +8,7 @@
     <item
             android:id="@+id/navigation_exercises"
             android:icon="@drawable/list_icon"
-            android:title="@string/bottom_nav_all_workouts"
+            android:title="@string/all_workouts"
     />
     <item
             android:id="@+id/navigation_profile"

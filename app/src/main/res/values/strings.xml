@@ -23,5 +23,13 @@
     <string name="sign_out">Sign out</string>
     <string name="preferences">Preferences</string>
     <string name="edit_profile">Edit profile</string>
-    <string name="bottom_nav_all_workouts">All workouts</string>
+    <string name="all_workouts">All workouts</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Portuguese</item>
+    </string-array>
+    <string name="new_workout">New workout</string>
 </resources>

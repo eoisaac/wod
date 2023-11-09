@@ -152,7 +152,6 @@
                 app:layout_constraintBottom_toBottomOf="@id/todays_workout_text_view"
                 app:layout_constraintStart_toEndOf="@id/todays_workout_text_view"
                 app:layout_constraintEnd_toEndOf="parent"
-
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.eoisaac.wod.databinding.ActivitySignUpBinding
-import com.eoisaac.wod.utils.getTimeBasedGreeting
 import com.eoisaac.wod.viewModels.SignUpModelView
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener {

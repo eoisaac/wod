@@ -25,18 +25,23 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
     private fun setupOnClickListeners() {
         binding.navigateToPreferencesButton.setOnClickListener(this)
+        binding.navigateToEditProfileButton.setOnClickListener(this)
     }
 
     override fun onClick(button: View) {
         when (button.id) {
             binding.navigateToPreferencesButton.id -> navigateToPreferencesActivity()
+            binding.navigateToEditProfileButton.id -> navigateToEditProfileActivity()
         }
+    }
+
+    private fun navigateToEditProfileActivity() {
+        val intent = Intent(activity, EditProfileActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToPreferencesActivity() {
         val intent = Intent(activity, PreferencesActivity::class.java)
         startActivity(intent)
     }
-
-
 }

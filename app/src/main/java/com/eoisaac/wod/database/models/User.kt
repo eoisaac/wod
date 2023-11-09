@@ -14,5 +14,5 @@ data class User(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "email") val email: String,
     @ColumnInfo(name = "password") val password: String,
-    @ColumnInfo(name = "picture") val picture: String
+    @ColumnInfo(name = "picture") val picture: String? = null,
 )

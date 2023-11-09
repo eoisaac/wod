@@ -15,6 +15,8 @@ import androidx.compose.ui.res.stringResource
  * @property args The optional arguments to be used in conjunction with the string resource.
  *
  * @return A string value of the appropriate type.
+ *
+ * @see [https://www.youtube.com/watch?v=mB1Lej0aDus&ab_channel=PhilippLackner]
  */
 sealed class StringContent {
     data class DynamicString(val value: String) : StringContent()

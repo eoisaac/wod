@@ -23,5 +23,8 @@
     <string name="sign_out">Sair</string>
     <string name="preferences">Preferências</string>
     <string name="edit_profile">Editar perfil</string>
-    <string name="bottom_nav_all_workouts">Treinos</string>
+    <string name="all_workouts">Treinos</string>
+    <string name="language">Idioma</string>
+    <string name="theme">Tema</string>
+    <string name="new_workout">Novo treino</string>
 </resources>
