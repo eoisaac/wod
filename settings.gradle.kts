@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "wod"
+rootProject.name = "WoD"
 include(":app")

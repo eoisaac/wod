@@ -1,95 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--======= Primary colors =========-->
-    <color name="lime_1">#fffcfdfa</color>
-    <color name="lime_2">#fff8faf3</color>
-    <color name="lime_3">#ffeef6d6</color>
-    <color name="lime_4">#ffe2f0bd</color>
-    <color name="lime_5">#ffd3e7a6</color>
-    <color name="lime_6">#ffc2da91</color>
-    <color name="lime_7">#ffabc978</color>
-    <color name="lime_8">#ff8db654</color>
-    <color name="lime_9">#ffbdee63</color>
-    <color name="lime_10">#ffb0e64c</color>
-    <color name="lime_11">#ff5c7c2f</color>
-    <color name="lime_12">#ff37401c</color>
-
-
-    <!--====== Secondary colors ========-->
-    <color name="iris_1">#fffdfdff</color>
-    <color name="iris_2">#fff8f8ff</color>
-    <color name="iris_3">#fff0f1fe</color>
-    <color name="iris_4">#ffe6e7ff</color>
-    <color name="iris_5">#ffdadcff</color>
-    <color name="iris_6">#ffcbcdff</color>
-    <color name="iris_7">#ffb8baf8</color>
-    <color name="iris_8">#ff9b9ef0</color>
-    <color name="iris_9">#ff5b5bd6</color>
-    <color name="iris_10">#ff5151cd</color>
-    <color name="iris_11">#ff5753c6</color>
-    <color name="iris_12">#ff272962</color>
-
-    <!--========= Status colors =========-->
-    <!-- Success -->
-    <color name="green_1">#fffbfefc</color>
-    <color name="green_2">#fff4fbf6</color>
-    <color name="green_3">#ffe6f6eb</color>
-    <color name="green_4">#ffd6f1df</color>
-    <color name="green_5">#ffc4e8d1</color>
-    <color name="green_6">#ffadddc0</color>
-    <color name="green_7">#ff8eceaa</color>
-    <color name="green_8">#ff5bb98b</color>
-    <color name="green_9">#ff30a46c</color>
-    <color name="green_10">#ff2b9a66</color>
-    <color name="green_11">#ff218358</color>
-    <color name="green_12">#ff193b2d</color>
-
-    <!-- Warning -->
-    <color name="yellow_1">#fffdfdf9</color>
-    <color name="yellow_2">#fffefce9</color>
-    <color name="yellow_3">#fffffab8</color>
-    <color name="yellow_4">#fffff394</color>
-    <color name="yellow_5">#ffffe770</color>
-    <color name="yellow_6">#fff3d768</color>
-    <color name="yellow_7">#ffe4c767</color>
-    <color name="yellow_8">#ffd5ae39</color>
-    <color name="yellow_9">#ffffe629</color>
-    <color name="yellow_10">#ffffdc00</color>
-    <color name="yellow_11">#ff9e6c00</color>
-    <color name="yellow_12">#ff473b1f</color>
-
-    <!-- Danger -->
-    <color name="red_1">#fffffcfc</color>
-    <color name="red_2">#fffff7f7</color>
-    <color name="red_3">#fffeebec</color>
-    <color name="red_4">#ffffdbdc</color>
-    <color name="red_5">#ffffcdce</color>
-    <color name="red_6">#ffbfdbbe</color>
-    <color name="red_7">#fff4a9aa</color>
-    <color name="red_8">#ffeb8e90</color>
-    <color name="red_9">#ffe5484d</color>
-    <color name="red_10">#ffdc3e42</color>
-    <color name="red_11">#ffce2c31</color>
-    <color name="red_12">#ff641723</color>
-
-    <!--========= Base colors ==========-->
-    <color name="gray_1">#fffcfcfc</color>
-    <color name="gray_2">#fff9f9f9</color>
-    <color name="gray_3">#fff0f0f0</color>
-    <color name="gray_4">#ffe8e8e8</color>
-    <color name="gray_5">#ffe0e0e0</color>
-    <color name="gray_6">#ffd9d9d9</color>
-    <color name="gray_7">#ffcecece</color>
-    <color name="gray_8">#ffbbbbbb</color>
-    <color name="gray_9">#ff8d8d8d</color>
-    <color name="gray_10">#ff838383</color>
-    <color name="gray_11">#ff646464</color>
-    <color name="gray_12">#ff202020</color>
-
-    <!-- Neutral -->
-    <color name="black">#ff000000</color>
-    <color name="white">#ffffffff</color>
-
-    <color name="gray_dark">#ff202020</color>
-    <color name="gray_light">#fffcfcfc</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
 </resources>

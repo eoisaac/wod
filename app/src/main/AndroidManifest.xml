@@ -10,33 +10,18 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/Theme.Wod"
+            android:theme="@style/Theme.WoD"
             tools:targetApi="31">
         <activity
-                android:name=".views.NewWorkoutActivity"
-                android:exported="false"/>
-        <activity
-                android:name=".views.EditProfileActivity"
-                android:exported="false"/>
-        <activity
-                android:name=".views.PreferencesActivity"
-                android:exported="false"/>
-        <activity
-                android:name=".views.SignUpActivity"
-                android:exported="true">
-        </activity>
-        <activity
-                android:name=".views.SignInActivity"
-                android:exported="true">
+                android:name=".MainActivity"
+                android:exported="true"
+                android:label="@string/app_name"
+                android:theme="@style/Theme.WoD">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity
-                android:name=".views.MainActivity"
-                android:exported="true">
         </activity>
     </application>
 
