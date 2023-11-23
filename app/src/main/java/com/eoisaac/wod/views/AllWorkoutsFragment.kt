@@ -25,12 +25,11 @@ class AllWorkoutsFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setupOnClickListeners() {
-        binding.navigateToNewWorkoutButton.setOnClickListener(this)
     }
 
     override fun onClick(button: View) {
         when (button.id) {
-            binding.navigateToNewWorkoutButton.id -> navigateToNewWorkoutActivity()
+            else -> {}
         }
     }
 
