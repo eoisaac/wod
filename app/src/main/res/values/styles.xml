@@ -20,16 +20,6 @@
         <item name="android:textColor">@color/gray_12</item>
     </style>
 
-    <!-- Dropdown -->
-    <style name="DropdownLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-        <item name="boxCornerRadiusTopStart">16dp</item>
-        <item name="boxCornerRadiusTopEnd">16dp</item>
-        <item name="boxCornerRadiusBottomEnd">16dp</item>
-        <item name="boxCornerRadiusBottomStart">16dp</item>
-        <item name="helperTextTextColor">@color/gray_11</item>
-        <item name="endIconTint">@color/gray_11</item>
-    </style>
-
     <!-- Text -->
     <style name="TitleTextStyle" parent="Widget.MaterialComponents.TextView">
         <item name="android:textSize">32sp</item>
@@ -98,25 +88,14 @@
         <item name="iconSize">26dp</item>
     </style>
 
-    <style name="DangerLinkButtonStyle" parent="Widget.Material3.Button.TextButton">
-        <item name="android:textSize">16sp</item>
-        <item name="cornerRadius">16dp</item>
-        <item name="android:minHeight">0dp</item>
-        <item name="android:minWidth">0dp</item>
-        <item name="android:textColor">@color/red_11</item>
-        <item name="iconTint">@color/red_11</item>
-        <item name="rippleColor">@color/red_4</item>
-        <item name="iconSize">26dp</item>
-    </style>
-
-    <style name="SecondaryIconButtonStyle" parent="Widget.Material3.Button.IconButton">
+    <style name="PrimaryIconButtonStyle" parent="Widget.Material3.Button.IconButton">
         <item name="android:textSize">16sp</item>
         <item name="cornerRadius">16dp</item>
         <item name="android:minHeight">0dp</item>
         <item name="android:minWidth">0dp</item>
         <item name="android:textColor">@color/gray_11</item>
-        <item name="iconTint">@color/gray_11</item>
-        <item name="rippleColor">@color/gray_4</item>
+        <item name="iconTint">@color/lime_9</item>
+        <item name="rippleColor">@color/lime_4</item>
         <item name="iconSize">26dp</item>
     </style>
 

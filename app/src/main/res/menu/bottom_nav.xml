@@ -6,13 +6,13 @@
             android:title="@string/bottom_nav_workout"
     />
     <item
+            android:id="@+id/navigation_new_workout"
+            android:icon="@drawable/plus_circle_icon"
+            android:title="@string/bottom_nav_new_workout"
+    />
+    <item
             android:id="@+id/navigation_all_workouts"
             android:icon="@drawable/list_icon"
             android:title="@string/all_workouts"
-    />
-    <item
-            android:id="@+id/navigation_profile"
-            android:icon="@drawable/user_circle_icon"
-            android:title="@string/bottom_nav_profile"
     />
 </menu>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.eoisaac.wod.R
 import com.eoisaac.wod.databinding.FragmentAllWorkoutsBinding
 
 
@@ -34,7 +35,7 @@ class AllWorkoutsFragment : Fragment(), View.OnClickListener {
     }
 
     private fun navigateToNewWorkoutActivity() {
-        val intent = Intent(activity, NewWorkoutActivity::class.java)
-        startActivity(intent)
+        val mainActivity = requireActivity() as MainActivity
+        mainActivity.navigateToFragment(NewWorkoutFragment(), R.id.navigation_new_workout)
     }
 }

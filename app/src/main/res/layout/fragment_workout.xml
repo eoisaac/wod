@@ -10,7 +10,6 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".views.SignInActivity"
             android:padding="24dp"
     >
         <com.google.android.material.textview.MaterialTextView
@@ -36,23 +35,6 @@
         />
 
         <com.google.android.material.card.MaterialCardView
-                android:id="@+id/profile_picture_card_view"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                style="@style/BorderCard"
-                app:cardCornerRadius="999dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/greeting_text_view"
-                app:layout_constraintBottom_toBottomOf="@+id/time_greeting_text_view"
-        >
-            <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/user_picture"
-            />
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
                 android:id="@+id/progress_card_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +48,6 @@
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:context=".views.SignInActivity"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
             >
