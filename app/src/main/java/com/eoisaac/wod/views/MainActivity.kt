@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
             R.id.navigation_workout -> replaceFragment(WorkoutFragment())
             R.id.navigation_all_workouts -> replaceFragment(AllWorkoutsFragment())
             R.id.navigation_new_workout -> replaceFragment(NewWorkoutFragment())
-            // else -> {}
         }
         return true
     }

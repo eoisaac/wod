@@ -13,7 +13,6 @@ import com.eoisaac.wod.viewModels.WorkoutViewModel
 
 class WorkoutFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentWorkoutBinding
-
     private lateinit var viewModel: WorkoutViewModel
 
     override fun onCreateView(

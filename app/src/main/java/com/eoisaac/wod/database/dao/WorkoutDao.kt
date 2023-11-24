@@ -2,6 +2,7 @@ package com.eoisaac.wod.database.dao
 
 import androidx.room.*
 import com.eoisaac.wod.database.models.Workout
+import com.eoisaac.wod.database.models.WorkoutWithExercises
 
 @Dao
 interface WorkoutDao {
@@ -17,4 +18,12 @@ interface WorkoutDao {
 
     @Query("SELECT * FROM workouts WHERE week_day = :weekDay")
     fun getByWeekDay(weekDay: Int): Workout
+
+    @Transaction
+    @Query("SELECT * FROM workouts WHERE id = :id")
+    fun getWorkoutWithExercisesById(id: Long): WorkoutWithExercises
+
+    @Transaction
+    @Query("SELECT * FROM workouts WHERE week_day = :weekDay")
+    fun getWorkoutsWithExercisesByWeekDay(weekDay: Int): List<WorkoutWithExercises>
 }

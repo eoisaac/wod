@@ -11,7 +11,7 @@ data class Workout(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "week_day") val weekDay: Int,
 
-)
+    )
 
 data class WorkoutWithExercises(
     @Embedded val workout: Workout,
@@ -19,5 +19,5 @@ data class WorkoutWithExercises(
         parentColumn = "id",
         entityColumn = "workout_id"
     )
-    @ColumnInfo(name = "exercises") val exercises: List<Exercise>,
+    val exercises: List<Exercise>,
 )
