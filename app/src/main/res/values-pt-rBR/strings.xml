@@ -10,4 +10,11 @@
     <string name="all_workouts">Treinos</string>
     <string name="new_workout">Novo treino</string>
     <string name="bottom_nav_new_workout">Novo treino</string>
+    <string name="search">Buscar</string>
+    <string name="week_day">Dia da semana</string>
+    <string name="new_exercise">Novo Exercício</string>
+    <string name="exercise_name">Nome do exercício</string>
+    <string name="exercises">Exercícios</string>
+    <string name="series">Séries</string>
+    <string name="create_workout">Criar treino</string>
 </resources>

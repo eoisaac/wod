@@ -42,13 +42,12 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    // room
+    kapt("androidx.room:room-compiler:2.6.0")
     implementation("androidx.room:room-runtime:2.6.0")
     implementation("androidx.room:room-ktx:2.6.0")
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
-    kapt("androidx.room:room-compiler:2.6.0")
-
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
