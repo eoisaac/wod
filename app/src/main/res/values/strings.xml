@@ -19,4 +19,12 @@
     <string name="sets">Sets</string>
     <string name="add">Add</string>
     <string name="create">Create</string>
+    <string name="monday_first_letter">M</string>
+    <string name="tuesday_first_letter">T</string>
+    <string name="wednesday_first_letter">W</string>
+    <string name="thursday_first_letter">T</string>
+    <string name="friday_first_letter">F</string>
+    <string name="saturday_first_letter">S</string>
+    <string name="sunday_first_letter">S</string>
+    <string name="week_days">Week days</string>
 </resources>

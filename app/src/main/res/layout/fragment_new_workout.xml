@@ -63,14 +63,26 @@
             />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/week_days_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/week_days"
+                style="@style/BodyTextStyle"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_text_input_layout"
+        />
+
         <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/week_days_list"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name_text_input_layout">
+                app:layout_constraintTop_toBottomOf="@+id/week_days_label">
 
             <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/mondays_checkbox"
@@ -78,7 +90,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
-                    android:text="M"
+                    android:text="@string/monday_first_letter"
             />
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -87,7 +99,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
-                    android:text="T"
+                    android:text="@string/tuesday_first_letter"
             />
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -96,7 +108,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
-                    android:text="W"
+                    android:text="@string/wednesday_first_letter"
             />
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -105,7 +117,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
-                    android:text="T"
+                    android:text="@string/thursday_first_letter"
             />
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -114,7 +126,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
-                    android:text="F"
+                    android:text="@string/friday_first_letter"
             />
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -123,7 +135,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
-                    android:text="S"
+                    android:text="@string/saturday_first_letter"
             />
 
             <com.google.android.material.checkbox.MaterialCheckBox
@@ -132,7 +144,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
-                    android:text="S"
+                    android:text="@string/sunday_first_letter"
 
             />
         </androidx.appcompat.widget.LinearLayoutCompat>

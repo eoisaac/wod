@@ -12,6 +12,10 @@
         <item name="android:windowLightStatusBar">true</item>
 
         <item name="android:windowBackground">@color/gray_1</item>
+
+        <item name="snackbarStyle">@style/SnackBarContainerStyle</item>
+        <item name="snackbarButtonStyle">@style/SnackBarButtonStyle</item>
+        <item name="snackbarTextViewStyle">@style/SnackBarTextStyle</item>
     </style>
 
     <style name="Theme.Wod" parent="Base.Theme.Wod"/>
