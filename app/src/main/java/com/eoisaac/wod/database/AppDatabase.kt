@@ -4,41 +4,38 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.eoisaac.wod.database.dao.UserDao
-import com.eoisaac.wod.database.models.User
+import com.eoisaac.wod.database.dao.ExerciseDao
+import com.eoisaac.wod.database.dao.WorkoutDao
+import com.eoisaac.wod.database.models.Exercise
+import com.eoisaac.wod.database.models.Workout
 
 @Database(
     entities = [
-        User::class
+        Exercise::class,
+        Workout::class,
     ], version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun userDao(): UserDao
+
+    abstract fun exerciseDao(): ExerciseDao
+    abstract fun workoutDao(): WorkoutDao
 
     companion object {
-        @Volatile
-        private var INSTANCE: AppDatabase? = null
+        private lateinit var INSTANCE: AppDatabase
 
         fun getDatabase(context: Context): AppDatabase {
-            val tempInstance = INSTANCE
-
-            if (tempInstance != null) {
-                return tempInstance
+            if (!::INSTANCE.isInitialized) {
+                synchronized(AppDatabase::class.java) {
+                    INSTANCE = Room.databaseBuilder(
+                        context,
+                        AppDatabase::class.java,
+                        "wod_database",
+                    )
+                        .allowMainThreadQueries()
+                        .build()
+                }
             }
-
-            synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "app_database"
-                )
-                    .build()
-                INSTANCE = instance
-                return instance
-            }
-
+            return INSTANCE
         }
     }
 }

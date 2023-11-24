@@ -8,20 +8,20 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.eoisaac.wod.R
 import com.eoisaac.wod.databinding.FragmentWorkoutBinding
-import com.eoisaac.wod.viewModels.WorkoutModelView
+import com.eoisaac.wod.viewModels.WorkoutViewModel
 
 
 class WorkoutFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentWorkoutBinding
 
-    private lateinit var viewModel: WorkoutModelView
+    private lateinit var viewModel: WorkoutViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentWorkoutBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this)[WorkoutModelView::class.java]
+        viewModel = ViewModelProvider(this)[WorkoutViewModel::class.java]
 
         viewModel.timeBasedGreeting().observe(requireActivity()) {
             binding.timeGreetingTextView.text = it.asString(requireContext())

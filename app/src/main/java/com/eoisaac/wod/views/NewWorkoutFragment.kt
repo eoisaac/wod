@@ -5,11 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-import com.eoisaac.wod.R
 import com.eoisaac.wod.databinding.FragmentNewWorkoutBinding
-import com.eoisaac.wod.databinding.FragmentWorkoutBinding
-import com.eoisaac.wod.viewModels.WorkoutModelView
 
 
 class NewWorkoutFragment : Fragment(), View.OnClickListener {
