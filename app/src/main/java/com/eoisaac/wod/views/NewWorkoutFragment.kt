@@ -37,7 +37,7 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
 
     private fun handleCreateNewWorkout() {
         val name = binding.nameTextInputField.text.toString()
-        val weekDay = binding.dateTextInputField.text.toString().toInt()
+        val weekDay = 0
 
         viewModel.createNewWorkout(name, weekDay)
     }

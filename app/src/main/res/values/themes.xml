@@ -4,8 +4,8 @@
         <item name="colorPrimaryVariant">@color/lime_10</item>
         <item name="colorOnPrimary">@color/gray_12</item>
 
-        <item name="colorSecondary">@color/iris_9</item>
-        <item name="colorSecondaryVariant">@color/iris_10</item>
+        <item name="colorSecondary">@color/lime_9</item>
+        <item name="colorSecondaryVariant">@color/lime_10</item>
         <item name="colorOnSecondary">@color/gray_12</item>
 
         <item name="android:statusBarColor" >@color/gray_1</item>
