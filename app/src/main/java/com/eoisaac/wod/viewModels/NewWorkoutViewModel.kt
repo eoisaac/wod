@@ -26,7 +26,8 @@ class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private val newWorkoutExercises = mutableListOf<Exercise>()
-    fun getNewWorkoutExercises(): List<Exercise> = newWorkoutExercises
+    fun getNewWorkoutExercises(): MutableList<Exercise> = newWorkoutExercises
+
     fun addExercise(name: String, sets: Int) {
         val exercise = Exercise(name = name, sets = sets)
         newWorkoutExercises.add(exercise)
