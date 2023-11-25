@@ -33,4 +33,5 @@
     <string name="no_week_days_error">Minimum of 1 week day</string>
     <string name="created_workout">Workout created successfully!</string>
     <string name="create_workout_error">Error creating workout</string>
+    <string name="exercise_sets_amount">%d sets</string>
 </resources>

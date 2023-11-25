@@ -38,6 +38,16 @@ class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
     fun createNewWorkout(name: String, weekDays: List<WeekDays>): Long {
         val weekDay = weekDays[0].index
         val workout = Workout(name = name, weekDay = weekDay)
-        return workoutRepository.insert(workout)
+
+        val newWorkoutId = workoutRepository.insert(workout)
+        Log.d("NewWorkout", workout.toString())
+
+        newWorkoutExercises.forEach { exercise ->
+            exercise.workoutId = newWorkoutId
+            exerciseRepository.insert(exercise)
+            Log.d("NewExercise", exercise.toString())
+        }
+
+        return newWorkoutId
     }
 }

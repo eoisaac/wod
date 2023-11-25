@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.R
 import com.eoisaac.wod.database.models.Exercise
+import com.eoisaac.wod.utils.StringContent
 import com.google.android.material.button.MaterialButton
 
 class ExerciseAdapter(private val exercises: MutableList<Exercise>) :
@@ -43,8 +44,10 @@ class ExerciseAdapter(private val exercises: MutableList<Exercise>) :
         val deleteButton: MaterialButton = itemView.findViewById(R.id.delete_exercise_button)
 
         fun bind(exercise: Exercise) {
+            val setsContent = StringContent.StringResource(R.string.exercise_sets_amount, exercise.sets)
+
             nameTextView.text = exercise.name
-            setsTextView.text = exercise.sets.toString()
+            setsTextView.text = setsContent.asString(itemView.context)
         }
     }
 }

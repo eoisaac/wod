@@ -1,5 +1,6 @@
 package com.eoisaac.wod.database.repositories
 
+import androidx.lifecycle.LiveData
 import com.eoisaac.wod.database.dao.WorkoutDao
 import com.eoisaac.wod.database.models.Workout
 import com.eoisaac.wod.database.models.WorkoutWithExercises
@@ -26,7 +27,11 @@ class WorkoutRepository(private val workoutDao: WorkoutDao) {
         return workoutDao.getWorkoutWithExercisesById(id)
     }
 
-    fun getWorkoutsWithExercisesByWeekDay(weekDay: Int): List<WorkoutWithExercises> {
+    fun getWorkoutsWithExercisesByWeekDay(weekDay: Int): LiveData<List<WorkoutWithExercises>> {
         return workoutDao.getWorkoutsWithExercisesByWeekDay(weekDay)
+    }
+
+    fun getAllWorkoutsWithExercises(): LiveData<List<WorkoutWithExercises>> {
+        return workoutDao.getWorkoutsWithExercises()
     }
 }

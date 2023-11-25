@@ -1,5 +1,6 @@
 package com.eoisaac.wod.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.eoisaac.wod.database.models.Workout
 import com.eoisaac.wod.database.models.WorkoutWithExercises
@@ -25,5 +26,9 @@ interface WorkoutDao {
 
     @Transaction
     @Query("SELECT * FROM workouts WHERE week_day = :weekDay")
-    fun getWorkoutsWithExercisesByWeekDay(weekDay: Int): List<WorkoutWithExercises>
+    fun getWorkoutsWithExercisesByWeekDay(weekDay: Int): LiveData<List<WorkoutWithExercises>>
+
+    @Transaction
+    @Query("SELECT * FROM workouts")
+    fun getWorkoutsWithExercises(): LiveData<List<WorkoutWithExercises>>
 }

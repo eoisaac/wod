@@ -66,7 +66,7 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setupRecyclerView() {
-        exercisesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        exercisesRecyclerView.layoutManager = LinearLayoutManager(context) // requireContext()
         val exercisesRecyclerView: RecyclerView = exercisesRecyclerView
 
         exercisesAdapter = ExerciseAdapter(viewModel.getNewWorkoutExercises())
