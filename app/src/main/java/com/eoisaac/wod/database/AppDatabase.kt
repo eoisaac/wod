@@ -4,10 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.eoisaac.wod.database.dao.ExerciseDao
 import com.eoisaac.wod.database.dao.WorkoutDao
 import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.Workout
+import com.eoisaac.wod.utils.DatabaseConverters
 
 @Database(
     entities = [
@@ -15,6 +17,7 @@ import com.eoisaac.wod.database.models.Workout
         Workout::class,
     ], version = 1
 )
+@TypeConverters(DatabaseConverters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun exerciseDao(): ExerciseDao

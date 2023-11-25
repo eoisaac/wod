@@ -9,15 +9,6 @@ data class Workout(
     val id: Long = 0L,
 
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "week_day") val weekDay: Int,
-
-    )
-
-data class WorkoutWithExercises(
-    @Embedded val workout: Workout,
-    @Relation(
-        parentColumn = "id",
-        entityColumn = "workout_id"
-    )
-    val exercises: List<Exercise>,
+    @ColumnInfo(name = "week_days") val weekDays: List<String>,
 )
+

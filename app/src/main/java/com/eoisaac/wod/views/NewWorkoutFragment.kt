@@ -42,7 +42,7 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     private val exerciseSetsInputField by lazy { binding.exerciseSetsTextInputField }
     private val createWorkoutButton by lazy { binding.createWorkoutButton }
     private val addExerciseButton by lazy { binding.addExerciseButton }
-    private val exercisesRecyclerView by lazy { binding.exercisesRecyclerView }
+    private val newExercisesRecyclerView by lazy { binding.newExercisesRecyclerView }
     private val weekDaysCheckboxes by lazy {
         listOf(
             binding.mondaysCheckbox, binding.tuesdaysCheckbox, binding.wednesdaysCheckbox,
@@ -64,8 +64,8 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setupRecyclerView() {
-        exercisesRecyclerView.layoutManager = LinearLayoutManager(context) // requireContext()
-        val exercisesRecyclerView: RecyclerView = exercisesRecyclerView
+        newExercisesRecyclerView.layoutManager = LinearLayoutManager(context) // requireContext()
+        val exercisesRecyclerView: RecyclerView = newExercisesRecyclerView
 
         exercisesAdapter = NewExercisesAdapter(viewModel.getNewWorkoutExercises())
         exercisesRecyclerView.adapter = exercisesAdapter

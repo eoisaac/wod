@@ -19,7 +19,7 @@ class WorkoutRepository(private val workoutDao: WorkoutDao) {
         return workoutDao.getById(id)
     }
 
-    fun getByWeekDay(weekDay: Int): Workout {
+    fun getByWeekDay(weekDay: String): Workout {
         return workoutDao.getByWeekDay(weekDay)
     }
 
@@ -27,7 +27,7 @@ class WorkoutRepository(private val workoutDao: WorkoutDao) {
         return workoutDao.getWorkoutWithExercisesById(id)
     }
 
-    fun getWorkoutsWithExercisesByWeekDay(weekDay: Int): LiveData<List<WorkoutWithExercises>> {
+    fun getWorkoutsWithExercisesByWeekDay(weekDay: String): LiveData<List<WorkoutWithExercises>> {
         return workoutDao.getWorkoutsWithExercisesByWeekDay(weekDay)
     }
 

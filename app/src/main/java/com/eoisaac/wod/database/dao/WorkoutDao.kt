@@ -17,16 +17,16 @@ interface WorkoutDao {
     @Query("SELECT * FROM workouts WHERE id = :id")
     fun getById(id: Long): Workout
 
-    @Query("SELECT * FROM workouts WHERE week_day = :weekDay")
-    fun getByWeekDay(weekDay: Int): Workout
+    @Query("SELECT * FROM workouts WHERE :weekDay IN (week_days)")
+    fun getByWeekDay(weekDay: String): Workout
 
     @Transaction
     @Query("SELECT * FROM workouts WHERE id = :id")
     fun getWorkoutWithExercisesById(id: Long): WorkoutWithExercises
 
     @Transaction
-    @Query("SELECT * FROM workouts WHERE week_day = :weekDay")
-    fun getWorkoutsWithExercisesByWeekDay(weekDay: Int): LiveData<List<WorkoutWithExercises>>
+    @Query("SELECT * FROM workouts WHERE :weekDay IN (week_days)")
+    fun getWorkoutsWithExercisesByWeekDay(weekDay: String): LiveData<List<WorkoutWithExercises>>
 
     @Transaction
     @Query("SELECT * FROM workouts")

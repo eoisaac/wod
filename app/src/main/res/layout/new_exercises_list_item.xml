@@ -14,44 +14,42 @@
             android:paddingHorizontal="16dp"
     >
         <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/workout_name"
-                android:layout_width="0dp"
+                android:id="@+id/exercise_name"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/SubtitleTextStyle"
                 android:textSize="18sp"
-                android:text="Workout name"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/delete_workout_button"
+                app:layout_constraintEnd_toStartOf="@id/sets_amount"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/exercises_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+        />
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sets_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/BodyTextStyle"
+                android:textStyle="bold"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintTop_toTopOf="@id/exercise_name"
+                app:layout_constraintStart_toEndOf="@id/exercise_name"
+                app:layout_constraintBottom_toBottomOf="@id/exercise_name"
+                app:layout_constraintEnd_toStartOf="@id/delete_exercise_button"
         />
 
         <com.google.android.material.button.MaterialButton
-                android:id="@+id/delete_workout_button"
+                android:id="@+id/delete_exercise_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/DangerIconButtonStyle"
                 android:paddingHorizontal="8dp"
                 app:icon="@drawable/trash"
                 app:iconSize="22dp"
-                app:layout_constraintTop_toTopOf="@id/workout_name"
-                app:layout_constraintStart_toEndOf="@id/workout_name"
-                app:layout_constraintBottom_toBottomOf="@id/workout_name"
+                app:layout_constraintTop_toTopOf="@id/exercise_name"
+                app:layout_constraintStart_toEndOf="@id/sets_amount"
+                app:layout_constraintBottom_toBottomOf="@id/exercise_name"
                 app:layout_constraintEnd_toEndOf="parent"
-        />
-
-        <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/exercises_label"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/exercises"
-                style="@style/BodyTextStyle"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/delete_workout_button"
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

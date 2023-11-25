@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.eoisaac.wod.R
 import com.eoisaac.wod.database.AppDatabase
+import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.database.repositories.ExerciseRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
 import com.eoisaac.wod.utils.DateUtils
@@ -17,6 +18,8 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
     private val workoutRepository: WorkoutRepository
     private val exerciseRepository: ExerciseRepository
 
+    private var dayWorkouts: LiveData<List<WorkoutWithExercises>>
+
     init {
         val database = AppDatabase.getDatabase(app)
 
@@ -25,6 +28,12 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
 
         val exerciseDao = database.exerciseDao()
         exerciseRepository = ExerciseRepository(exerciseDao)
+
+        dayWorkouts = workoutRepository.getWorkoutsWithExercisesByWeekDay("SATURDAY")
+    }
+
+    fun getDayWorkouts(): LiveData<List<WorkoutWithExercises>> {
+        return dayWorkouts
     }
 
     private var greeting = MutableLiveData<StringContent>()

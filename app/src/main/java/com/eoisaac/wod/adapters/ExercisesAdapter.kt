@@ -1,52 +1,55 @@
 package com.eoisaac.wod.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.R
 import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.utils.StringContent
-import com.google.android.material.button.MaterialButton
 
-class NewExercisesAdapter(private val exercises: MutableList<Exercise>) :
-    RecyclerView.Adapter<NewExercisesAdapter.ExerciseViewHolder>() {
+class ExercisesAdapter(private val exercises: List<Exercise>) :
+    RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolder>() {
+
+    private var showCheckbox = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.new_exercises_list_item, parent, false)
+            .inflate(R.layout.exercise_list_item, parent, false)
         return ExerciseViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val exercise = exercises[position]
-        holder.deleteButton.setOnClickListener { removeExercise(position) }
-        holder.bind(exercise)
+        holder.bind(exercise, showCheckbox)
     }
 
     override fun getItemCount(): Int {
         return exercises.size
     }
 
-    private fun removeExercise(position: Int) {
-        if (position < 0 || position >= exercises.size) return
-        exercises.removeAt(position)
-
-        notifyItemRemoved(position)
-        notifyItemRangeChanged(position, exercises.size)
+    @SuppressLint("NotifyDataSetChanged")
+    fun showCheckboxes(show: Boolean) {
+        showCheckbox = show
+        notifyDataSetChanged()
     }
 
     inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.exercise_name)
         private val setsTextView: TextView = itemView.findViewById(R.id.sets_amount)
-        val deleteButton: MaterialButton = itemView.findViewById(R.id.delete_exercise_button)
+        private val completeCheckbox: CheckBox = itemView.findViewById(R.id.exercise_complete_checkbox)
 
-        fun bind(exercise: Exercise) {
+        fun bind(exercise: Exercise, showCheckbox: Boolean = false) {
             val setsContent = StringContent.StringResource(R.string.exercise_sets_amount, exercise.sets)
 
             nameTextView.text = exercise.name
             setsTextView.text = setsContent.asString(itemView.context)
+
+            completeCheckbox.visibility = if (showCheckbox) View.VISIBLE else View.GONE
         }
     }
+
 }

@@ -222,7 +222,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
-                android:id="@+id/exercises_recycler_view_container"
+                android:id="@+id/new_exercises_recycler_view_container"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:orientation="vertical"
@@ -233,7 +233,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
         >
             <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/exercises_recycler_view"
+                    android:id="@+id/new_exercises_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
             />
