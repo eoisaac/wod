@@ -24,6 +24,7 @@ interface WorkoutDao {
     @Query("SELECT * FROM workouts WHERE id = :id")
     fun getWorkoutWithExercisesById(id: Long): WorkoutWithExercises
 
+    // TODO: fix this
     @Transaction
     @Query("SELECT * FROM workouts WHERE :weekDay IN (week_days)")
     fun getWorkoutsWithExercisesByWeekDay(weekDay: String): LiveData<List<WorkoutWithExercises>>

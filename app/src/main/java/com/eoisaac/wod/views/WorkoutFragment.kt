@@ -1,6 +1,7 @@
 package com.eoisaac.wod.views
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,7 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
         }
 
         viewModel.getDayWorkouts().observe(viewLifecycleOwner) { workouts ->
+            Log.i("WorkoutFragment", "Workouts: $workouts")
             setupRecyclerView(workouts)
         }
 
