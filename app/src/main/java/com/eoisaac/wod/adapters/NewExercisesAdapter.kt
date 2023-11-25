@@ -1,6 +1,5 @@
 package com.eoisaac.wod.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +10,8 @@ import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.utils.StringContent
 import com.google.android.material.button.MaterialButton
 
-class ExerciseAdapter(private val exercises: MutableList<Exercise>) :
-    RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
+class NewExercisesAdapter(private val exercises: MutableList<Exercise>) :
+    RecyclerView.Adapter<NewExercisesAdapter.ExerciseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         val view = LayoutInflater.from(parent.context)

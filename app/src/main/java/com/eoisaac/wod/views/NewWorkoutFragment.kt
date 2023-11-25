@@ -2,7 +2,6 @@ package com.eoisaac.wod.views
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.R
-import com.eoisaac.wod.adapters.ExerciseAdapter
+import com.eoisaac.wod.adapters.NewExercisesAdapter
 import com.eoisaac.wod.databinding.FragmentNewWorkoutBinding
 import com.eoisaac.wod.entities.WeekDays
 import com.eoisaac.wod.viewModels.NewWorkoutViewModel
-import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
@@ -24,7 +22,7 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentNewWorkoutBinding
     private lateinit var viewModel: NewWorkoutViewModel
 
-    private lateinit var exercisesAdapter: ExerciseAdapter
+    private lateinit var exercisesAdapter: NewExercisesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,7 +67,7 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
         exercisesRecyclerView.layoutManager = LinearLayoutManager(context) // requireContext()
         val exercisesRecyclerView: RecyclerView = exercisesRecyclerView
 
-        exercisesAdapter = ExerciseAdapter(viewModel.getNewWorkoutExercises())
+        exercisesAdapter = NewExercisesAdapter(viewModel.getNewWorkoutExercises())
         exercisesRecyclerView.adapter = exercisesAdapter
     }
 

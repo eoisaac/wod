@@ -1,24 +1,27 @@
 package com.eoisaac.wod.views
 
 import android.os.Bundle
-import android.util.Log
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.eoisaac.wod.adapters.WorkoutAdapter
+import com.eoisaac.wod.adapters.AllWorkoutsAdapter
+import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.databinding.FragmentAllWorkoutsBinding
 import com.eoisaac.wod.viewModels.AllWorkoutsViewModel
 
 
-class AllWorkoutsFragment : Fragment(), View.OnClickListener {
+class AllWorkoutsFragment : Fragment() {
     private lateinit var binding: FragmentAllWorkoutsBinding
     private lateinit var viewModel: AllWorkoutsViewModel
 
-    private lateinit var workoutsAdapter: WorkoutAdapter
+    private lateinit var workoutsAdapter: AllWorkoutsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,31 +31,27 @@ class AllWorkoutsFragment : Fragment(), View.OnClickListener {
         viewModel = ViewModelProvider(this)[AllWorkoutsViewModel::class.java]
 
         viewModel.getAllWorkouts().observe(viewLifecycleOwner) { workouts ->
-//            Log.i("AllWorkoutsFragment", "Workouts: $workouts")
-            workoutsAdapter.updateWorkouts(workouts)
+            setupRecyclerView(workouts)
         }
+        setupWorkoutsFilter()
 
-        setupOnClickListeners()
-        setupRecyclerView()
         return binding.root
     }
 
     private val workoutsRecyclerView by lazy { binding.workoutsRecyclerView }
+    private val searchInputField by lazy { binding.searchTextInputField }
 
-    private fun setupOnClickListeners() {
+    private fun setupWorkoutsFilter() {
+        searchInputField.addTextChangedListener(afterTextChanged = {
+            workoutsAdapter.filter.filter(it)
+        })
     }
 
-    override fun onClick(button: View) {
-        when (button.id) {
-            else -> {}
-        }
-    }
-
-    private fun setupRecyclerView() {
+    private fun setupRecyclerView(workouts: List<WorkoutWithExercises>) {
         workoutsRecyclerView.layoutManager = LinearLayoutManager(context)
         val workoutsRecyclerView: RecyclerView = workoutsRecyclerView
 
-        workoutsAdapter = WorkoutAdapter(emptyList())
+        workoutsAdapter = AllWorkoutsAdapter(workouts)
         workoutsRecyclerView.adapter = workoutsAdapter
     }
 
