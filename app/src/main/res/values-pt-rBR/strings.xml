@@ -27,4 +27,10 @@
     <string name="saturday_first_letter">S</string>
     <string name="sunday_first_letter">D</string>
     <string name="week_days">Dias da semana</string>
+    <string name="invalid_name_error">O nome deve ter no mínimo 3 caracteres</string>
+    <string name="invalid_exercise_sets_error">Mínimo de 1 série</string>
+    <string name="no_exercises_error">Mínimo de 1 exercício</string>
+    <string name="no_week_days_error">Mínimo de 1 dia da semana</string>
+    <string name="created_workout">Treino criado com sucesso!</string>
+    <string name="create_workout_error">Erro ao criar treino</string>
 </resources>

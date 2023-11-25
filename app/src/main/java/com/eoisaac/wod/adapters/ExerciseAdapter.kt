@@ -1,5 +1,6 @@
 package com.eoisaac.wod.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +32,9 @@ class ExerciseAdapter(private val exercises: MutableList<Exercise>) :
     private fun removeExercise(position: Int) {
         if (position < 0 || position >= exercises.size) return
         exercises.removeAt(position)
+
         notifyItemRemoved(position)
+        notifyItemRangeChanged(position, exercises.size)
     }
 
     inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

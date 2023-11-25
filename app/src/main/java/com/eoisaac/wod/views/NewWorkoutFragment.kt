@@ -2,20 +2,22 @@ package com.eoisaac.wod.views
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.eoisaac.wod.R
 import com.eoisaac.wod.adapters.ExerciseAdapter
-import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.databinding.FragmentNewWorkoutBinding
+import com.eoisaac.wod.entities.WeekDays
 import com.eoisaac.wod.viewModels.NewWorkoutViewModel
+import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputEditText
 
 
 class NewWorkoutFragment : Fragment(), View.OnClickListener {
@@ -43,6 +45,13 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     private val createWorkoutButton by lazy { binding.createWorkoutButton }
     private val addExerciseButton by lazy { binding.addExerciseButton }
     private val exercisesRecyclerView by lazy { binding.exercisesRecyclerView }
+    private val weekDaysCheckboxes by lazy {
+        listOf(
+            binding.mondaysCheckbox, binding.tuesdaysCheckbox, binding.wednesdaysCheckbox,
+            binding.thursdaysCheckbox, binding.fridaysCheckbox, binding.saturdaysCheckbox,
+            binding.sundaysCheckbox
+        )
+    }
 
     private fun setupOnClickListeners() {
         createWorkoutButton.setOnClickListener(this)
@@ -69,14 +78,14 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
         val sets = exerciseSetsInputField.text.toString()
 
         if (name.isEmpty()) {
-            exerciseNameInputField.requestFocus()
-            Snackbar.make(binding.root, "Exercise name cannot be empty", Snackbar.LENGTH_SHORT).show()
+            val error = getString(R.string.invalid_name_error)
+            setInputFieldError(exerciseNameInputField, error)
             return
         }
 
-        if (sets.isEmpty()) {
-            exerciseSetsInputField.requestFocus()
-            Snackbar.make(binding.root, "Sets cannot be empty", Snackbar.LENGTH_SHORT).show()
+        if (sets.isEmpty() || sets.toInt() <= 0) {
+            val error = getString(R.string.invalid_exercise_sets_error)
+            setInputFieldError(exerciseSetsInputField, error)
             return
         }
 
@@ -85,19 +94,72 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
 
         exerciseNameInputField.text?.clear()
         exerciseSetsInputField.text?.clear()
-        exerciseSetsInputField.requestFocus()
+
+        exerciseNameInputField.requestFocus()
+    }
+
+    private fun getExerciseWeekDays(): List<WeekDays> {
+        with(binding) {
+            val checkboxesMap = mapOf(
+                weekDaysCheckboxes[0] to WeekDays.MONDAY, weekDaysCheckboxes[1] to WeekDays.TUESDAY,
+                weekDaysCheckboxes[2] to WeekDays.WEDNESDAY, weekDaysCheckboxes[3] to WeekDays.THURSDAY,
+                weekDaysCheckboxes[4] to WeekDays.FRIDAY, weekDaysCheckboxes[5] to WeekDays.SATURDAY,
+                weekDaysCheckboxes[6] to WeekDays.SUNDAY
+            )
+
+            return checkboxesMap.filter { it.key.isChecked }.map { it.value }
+        }
     }
 
     private fun handleCreateNewWorkout() {
         val name = workoutNameInputField.text.toString()
-        val weekDay = 0
+        val weekDays = getExerciseWeekDays()
 
-        if (name.isEmpty()) {
-            workoutNameInputField.requestFocus()
-            Snackbar.make(binding.root, "Workout Name cannot be empty", Snackbar.LENGTH_SHORT).show()
+        if (name.isEmpty() || name.length < 3) {
+            val error = getString(R.string.invalid_name_error)
+            setInputFieldError(workoutNameInputField, error)
             return
         }
 
-        viewModel.createNewWorkout(name, weekDay)
+        if (weekDays.isEmpty()) {
+            val error = getString(R.string.no_week_days_error)
+            binding.mondaysCheckbox.error = error
+            binding.mondaysCheckbox.requestFocus()
+            return
+        }
+
+        if (viewModel.getNewWorkoutExercises().isEmpty()) {
+            val error = getString(R.string.no_exercises_error)
+            setInputFieldError(exerciseNameInputField, error)
+            return
+        }
+
+        val workoutId = viewModel.createNewWorkout(name, weekDays)
+        if (workoutId > 0) {
+            val message = getString(R.string.created_workout)
+            Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
+
+            resetWorkoutForm()
+
+        } else {
+            val message = getString(R.string.create_workout_error)
+            Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
+        }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun resetWorkoutForm() {
+        workoutNameInputField.text?.clear()
+        exerciseNameInputField.text?.clear()
+        exerciseSetsInputField.text?.clear()
+
+        viewModel.getNewWorkoutExercises().clear()
+        exercisesAdapter.notifyDataSetChanged()
+        weekDaysCheckboxes.forEach { it.isChecked = false }
+    }
+
+    private fun setInputFieldError(inputField: TextInputEditText, error: String) {
+        inputField.requestFocus()
+        inputField.error = error
     }
 }

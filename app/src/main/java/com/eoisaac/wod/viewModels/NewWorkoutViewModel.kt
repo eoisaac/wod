@@ -1,6 +1,7 @@
 package com.eoisaac.wod.viewModels
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.Workout
 import com.eoisaac.wod.database.repositories.ExerciseRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
+import com.eoisaac.wod.entities.WeekDays
 
 class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
     private val workoutRepository: WorkoutRepository
@@ -33,9 +35,9 @@ class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
         newWorkoutExercises.add(exercise)
     }
 
-    fun createNewWorkout(name: String, weekDay: Int) {
+    fun createNewWorkout(name: String, weekDays: List<WeekDays>): Long {
+        val weekDay = weekDays[0].index
         val workout = Workout(name = name, weekDay = weekDay)
-        val workoutId = workoutRepository.insert(workout)
-        Toast.makeText(getApplication(), "Workout created with id: $workoutId", Toast.LENGTH_SHORT).show()
+        return workoutRepository.insert(workout)
     }
 }
