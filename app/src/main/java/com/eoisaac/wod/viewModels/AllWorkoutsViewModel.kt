@@ -4,10 +4,12 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import com.eoisaac.wod.database.AppDatabase
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.database.repositories.ExerciseRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
+import kotlinx.coroutines.launch
 
 
 class AllWorkoutsViewModel(app: Application) : AndroidViewModel(app) {
@@ -30,5 +32,9 @@ class AllWorkoutsViewModel(app: Application) : AndroidViewModel(app) {
 
     fun getAllWorkouts(): LiveData<List<WorkoutWithExercises>> {
         return allWorkouts
+    }
+
+    fun deleteWorkout(workout: WorkoutWithExercises) {
+        workoutRepository.delete(workout.workout)
     }
 }

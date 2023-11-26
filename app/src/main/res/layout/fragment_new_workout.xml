@@ -85,6 +85,15 @@
                 app:layout_constraintTop_toBottomOf="@+id/week_days_label">
 
             <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/sundays_checkbox"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    style="@style/VerticalCheckboxStyle"
+                    android:text="@string/sunday_first_letter"
+
+            />
+            <com.google.android.material.checkbox.MaterialCheckBox
                     android:id="@+id/mondays_checkbox"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -136,16 +145,6 @@
                     android:layout_height="wrap_content"
                     style="@style/VerticalCheckboxStyle"
                     android:text="@string/saturday_first_letter"
-            />
-
-            <com.google.android.material.checkbox.MaterialCheckBox
-                    android:id="@+id/sundays_checkbox"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    style="@style/VerticalCheckboxStyle"
-                    android:text="@string/sunday_first_letter"
-
             />
         </androidx.appcompat.widget.LinearLayoutCompat>
 

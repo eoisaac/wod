@@ -1,6 +1,7 @@
 package com.eoisaac.wod.viewModels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -29,7 +30,8 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
         val exerciseDao = database.exerciseDao()
         exerciseRepository = ExerciseRepository(exerciseDao)
 
-        dayWorkouts = workoutRepository.getWorkoutsWithExercisesByWeekDay2("SATURDAY")
+        val currentWeekDay = DateUtils.getDateWeekDay(Date())!!
+        dayWorkouts = workoutRepository.getWorkoutsWithExercisesByWeekDay2(currentWeekDay)
     }
 
     fun getDayWorkouts(): LiveData<List<WorkoutWithExercises>> {

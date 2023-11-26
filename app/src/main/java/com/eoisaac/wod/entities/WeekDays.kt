@@ -1,11 +1,17 @@
 package com.eoisaac.wod.entities
 
 enum class WeekDays(val day: String, val index: Int) {
-    MONDAY("MONDAY", 0),
-    TUESDAY("TUESDAY", 1),
-    WEDNESDAY("WEDNESDAY", 2),
-    THURSDAY("THURSDAY", 3),
-    FRIDAY("FRIDAY", 4),
-    SATURDAY("SATURDAY", 5),
-    SUNDAY("SUNDAY ", 6)
+    SUNDAY("SUNDAY ", 1),
+    MONDAY("MONDAY", 2),
+    TUESDAY("TUESDAY", 3),
+    WEDNESDAY("WEDNESDAY", 4),
+    THURSDAY("THURSDAY", 5),
+    FRIDAY("FRIDAY", 6),
+    SATURDAY("SATURDAY", 7);
+
+    companion object {
+        fun fromIndex(index: Int): WeekDays? {
+            return entries.find { it.index == index }
+        }
+    }
 }

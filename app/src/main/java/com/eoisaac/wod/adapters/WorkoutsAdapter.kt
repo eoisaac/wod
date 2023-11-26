@@ -1,6 +1,7 @@
 package com.eoisaac.wod.adapters
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.R
 import com.eoisaac.wod.database.models.WorkoutWithExercises
+import com.eoisaac.wod.interfaces.WorkoutPressListener
 
 
 class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
     RecyclerView.Adapter<WorkoutsAdapter.WorkoutViewHolder>(), Filterable {
+
+    private var workoutPressListener: WorkoutPressListener? = null
 
     private var filteredWorkouts: List<WorkoutWithExercises> = allWorkouts
 
@@ -35,6 +39,7 @@ class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
 
     private var showExercisesCheckbox = false
     private var showDeleteButton = false
+
     @SuppressLint("NotifyDataSetChanged")
     fun showCheckboxes(show: Boolean) {
         showExercisesCheckbox = show
@@ -42,6 +47,10 @@ class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
 
     fun showDeleteButton(show: Boolean) {
         showDeleteButton = show
+    }
+
+    fun setWorkoutPressListener(listener: WorkoutPressListener) {
+        workoutPressListener = listener
     }
 
     override fun getFilter(): Filter {
@@ -71,6 +80,7 @@ class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
 
         private val nameTextView: TextView = itemView.findViewById(R.id.workout_name)
         private val deleteButton: TextView = itemView.findViewById(R.id.delete_workout_button)
+
         init {
             exerciseRecyclerView.layoutManager = LinearLayoutManager(itemView.context)
             exerciseRecyclerView.adapter = ExercisesAdapter(emptyList())
@@ -80,6 +90,10 @@ class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
             nameTextView.text = workout.workout.name
 
             deleteButton.visibility = if (showDeleteButton) View.VISIBLE else View.INVISIBLE
+
+            deleteButton.setOnClickListener {
+                workoutPressListener?.onDeletePress(workout)
+            }
 
             val exerciseAdapter = ExercisesAdapter(workout.exercises)
             exerciseRecyclerView.adapter = exerciseAdapter

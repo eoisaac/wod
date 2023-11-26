@@ -45,9 +45,9 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     private val newExercisesRecyclerView by lazy { binding.newExercisesRecyclerView }
     private val weekDaysCheckboxes by lazy {
         listOf(
-            binding.mondaysCheckbox, binding.tuesdaysCheckbox, binding.wednesdaysCheckbox,
+            binding.sundaysCheckbox, binding.tuesdaysCheckbox, binding.wednesdaysCheckbox,
             binding.thursdaysCheckbox, binding.fridaysCheckbox, binding.saturdaysCheckbox,
-            binding.sundaysCheckbox
+            binding.mondaysCheckbox,
         )
     }
 
@@ -97,16 +97,12 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     }
 
     private fun getExerciseWeekDays(): List<WeekDays> {
-        with(binding) {
-            val checkboxesMap = mapOf(
-                weekDaysCheckboxes[0] to WeekDays.MONDAY, weekDaysCheckboxes[1] to WeekDays.TUESDAY,
-                weekDaysCheckboxes[2] to WeekDays.WEDNESDAY, weekDaysCheckboxes[3] to WeekDays.THURSDAY,
-                weekDaysCheckboxes[4] to WeekDays.FRIDAY, weekDaysCheckboxes[5] to WeekDays.SATURDAY,
-                weekDaysCheckboxes[6] to WeekDays.SUNDAY
-            )
-
-            return checkboxesMap.filter { it.key.isChecked }.map { it.value }
-        }
+        return mapOf(
+            weekDaysCheckboxes[0] to WeekDays.SUNDAY, weekDaysCheckboxes[1] to WeekDays.MONDAY,
+            weekDaysCheckboxes[2] to WeekDays.TUESDAY, weekDaysCheckboxes[3] to WeekDays.WEDNESDAY,
+            weekDaysCheckboxes[4] to WeekDays.THURSDAY, weekDaysCheckboxes[5] to WeekDays.FRIDAY,
+            weekDaysCheckboxes[6] to WeekDays.SATURDAY,
+        ).filter { it.key.isChecked }.map { it.value }
     }
 
     private fun handleCreateNewWorkout() {

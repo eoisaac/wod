@@ -6,6 +6,7 @@ import androidx.lifecycle.map
 import com.eoisaac.wod.database.dao.WorkoutDao
 import com.eoisaac.wod.database.models.Workout
 import com.eoisaac.wod.database.models.WorkoutWithExercises
+import com.eoisaac.wod.entities.WeekDays
 
 class WorkoutRepository(private val workoutDao: WorkoutDao) {
 
@@ -17,26 +18,14 @@ class WorkoutRepository(private val workoutDao: WorkoutDao) {
         return workoutDao.delete(workout)
     }
 
-    fun getById(id: Long): Workout {
-        return workoutDao.getById(id)
+    fun getWorkoutsWithExercisesByWeekDay(weekDay: WeekDays): LiveData<List<WorkoutWithExercises>> {
+        return workoutDao.getWorkoutsWithExercisesByWeekDay(weekDay.day)
     }
 
-    fun getByWeekDay(weekDay: String): Workout {
-        return workoutDao.getByWeekDay(weekDay)
-    }
-
-    fun getWorkoutWithExercisesById(id: Long): WorkoutWithExercises {
-        return workoutDao.getWorkoutWithExercisesById(id)
-    }
-
-    fun getWorkoutsWithExercisesByWeekDay(weekDay: String): LiveData<List<WorkoutWithExercises>> {
-        return workoutDao.getWorkoutsWithExercisesByWeekDay(weekDay)
-    }
-
-    fun getWorkoutsWithExercisesByWeekDay2(weekDay: String): LiveData<List<WorkoutWithExercises>> {
+    fun getWorkoutsWithExercisesByWeekDay2(weekDay: WeekDays): LiveData<List<WorkoutWithExercises>> {
         val workoutsList = workoutDao.getWorkoutsWithExercises()
         return workoutsList.map { workouts ->
-            workouts.filter { workout -> weekDay in workout.workout.weekDays }
+            workouts.filter { workout -> weekDay.day in workout.workout.weekDays }
         }
     }
 

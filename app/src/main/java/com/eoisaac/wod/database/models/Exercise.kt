@@ -2,9 +2,17 @@ package com.eoisaac.wod.database.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "exercises")
+@Entity(
+    tableName = "exercises", foreignKeys = [
+        ForeignKey(
+            entity = Workout::class, onDelete = ForeignKey.CASCADE,
+            parentColumns = ["id"], childColumns = ["workout_id"],
+        )
+    ]
+)
 data class Exercise(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

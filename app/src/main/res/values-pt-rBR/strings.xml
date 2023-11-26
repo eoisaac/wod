@@ -34,4 +34,5 @@
     <string name="created_workout">Treino criado com sucesso!</string>
     <string name="create_workout_error">Erro ao criar treino</string>
     <string name="exercise_sets_amount">%d séries</string>
+    <string name="completed_message">%d de %d completos!</string>
 </resources>

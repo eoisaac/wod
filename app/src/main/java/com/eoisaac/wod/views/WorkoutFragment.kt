@@ -42,7 +42,13 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
         return binding.root
     }
 
+    private val circularProgressIndicator by lazy { binding.circularProgressIndicator }
+    private val circularProgressIndicatorText by lazy { binding.progressIndicatorTextView }
+    private val progressMessage by lazy { binding.progressMessageTextView }
+    private val totalExercises by lazy { binding.totalExercisesTextView }
+
     private val dayWorkoutsRecyclerView by lazy { binding.dayWorkoutsRecyclerView }
+    private val navigateToAllWorkoutsButton by lazy { binding.navigateToAllWorkoutsButton }
 
     private fun setupRecyclerView(workouts: List<WorkoutWithExercises>) {
         dayWorkoutsRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -55,12 +61,12 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setupOnClickListeners() {
-        binding.navigateToAllWorkoutsButton.setOnClickListener(this)
+        navigateToAllWorkoutsButton.setOnClickListener(this)
     }
 
     override fun onClick(button: View) {
         when (button.id) {
-            binding.navigateToAllWorkoutsButton.id -> navigateToAllWorkoutsFragment()
+            navigateToAllWorkoutsButton.id -> navigateToAllWorkoutsFragment()
         }
     }
 
