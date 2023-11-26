@@ -35,4 +35,5 @@
     <string name="create_workout_error">Error creating workout</string>
     <string name="exercise_sets_amount">%d sets</string>
     <string name="completed_message">%d of %d completed!</string>
+    <string name="percentage_progress" translatable="false">%d%%</string>
 </resources>

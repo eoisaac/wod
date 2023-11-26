@@ -10,7 +10,9 @@ import com.eoisaac.wod.database.AppDatabase
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.database.repositories.ExerciseRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
+import com.eoisaac.wod.entities.WorkoutsSummary
 import com.eoisaac.wod.utils.DateUtils
+import com.eoisaac.wod.utils.Greeting
 import com.eoisaac.wod.utils.StringContent
 import java.util.Date
 
@@ -19,10 +21,13 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
     private val workoutRepository: WorkoutRepository
     private val exerciseRepository: ExerciseRepository
 
+    private var greeting = MutableLiveData<StringContent>()
     private var dayWorkouts: LiveData<List<WorkoutWithExercises>>
+    private var workoutsSummary = MutableLiveData<WorkoutsSummary>()
 
     init {
         val database = AppDatabase.getDatabase(app)
+        val todayDate = Date()
 
         val workoutDao = database.workoutDao()
         workoutRepository = WorkoutRepository(workoutDao)
@@ -30,27 +35,35 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
         val exerciseDao = database.exerciseDao()
         exerciseRepository = ExerciseRepository(exerciseDao)
 
-        val currentWeekDay = DateUtils.getDateWeekDay(Date())!!
+        val currentWeekDay = DateUtils.getDateWeekDay(todayDate)!!
         dayWorkouts = workoutRepository.getWorkoutsWithExercisesByWeekDay(currentWeekDay)
+        greeting.value = Greeting.getTimeBasedGreeting(todayDate)
+
+        dayWorkouts.observeForever { workouts -> calculateWorkoutsSummary(workouts) }
     }
 
     fun getDayWorkouts(): LiveData<List<WorkoutWithExercises>> {
         return dayWorkouts
     }
 
-    private var greeting = MutableLiveData<StringContent>()
-    fun timeBasedGreeting(): LiveData<StringContent> {
+    fun getTimeBasedGreeting(): LiveData<StringContent> {
         return greeting
     }
 
-    fun getTimeBasedGreeting(date: Date = Date()) {
-        val hour = DateUtils.getDateHour(date)
-        val greetingResourceId = when (hour) {
-            in 6..11 -> R.string.morning_greeting
-            in 12..17 -> R.string.afternoon_greeting
-            else -> R.string.evening_greeting
+    fun getWorkoutsSummary(): LiveData<WorkoutsSummary> {
+        return workoutsSummary
+    }
+
+    private fun calculateWorkoutsSummary(workouts: List<WorkoutWithExercises>) {
+        val totalExercises = workouts.sumOf { it.exercises.size }
+        val totalCompletedExercises = workouts.sumOf { workout ->
+            workout.exercises.count { it.completed }
         }
 
-        this.greeting.value = StringContent.StringResource(resourceId = greetingResourceId)
+        workoutsSummary.value = WorkoutsSummary(
+            totalExercises = totalExercises,
+            totalCompletedExercises = totalCompletedExercises,
+            completedPercentage = (totalCompletedExercises.toDouble() / totalExercises.toDouble() * 100).toInt(),
+        )
     }
 }

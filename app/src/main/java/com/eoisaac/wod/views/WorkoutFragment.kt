@@ -28,16 +28,7 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
         binding = FragmentWorkoutBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[WorkoutViewModel::class.java]
 
-        viewModel.timeBasedGreeting().observe(viewLifecycleOwner) {
-            binding.timeGreetingTextView.text = it.asString(requireContext())
-        }
-
-        viewModel.getDayWorkouts().observe(viewLifecycleOwner) { workouts ->
-            Log.i("WorkoutFragment", "Workouts: $workouts")
-            setupRecyclerView(workouts)
-        }
-
-        viewModel.getTimeBasedGreeting()
+        observeData()
         setupOnClickListeners()
         return binding.root
     }
@@ -58,6 +49,24 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
         recyclerView.adapter = workoutsAdapter
         workoutsAdapter.showCheckboxes(true)
         workoutsAdapter.showDeleteButton(false)
+    }
+
+    private fun observeData() {
+        viewModel.getDayWorkouts().observe(viewLifecycleOwner) { workouts ->
+            Log.i("WorkoutFragment", "Workouts: $workouts")
+            setupRecyclerView(workouts)
+        }
+
+        viewModel.getTimeBasedGreeting().observe(viewLifecycleOwner) {
+            binding.timeGreetingTextView.text = it.asString(requireContext())
+        }
+
+        viewModel.getWorkoutsSummary().observe(viewLifecycleOwner) { summary ->
+            circularProgressIndicator.progress = summary.completedPercentage
+            circularProgressIndicatorText.text = getString(R.string.percentage_progress, summary.completedPercentage)
+            totalExercises.text =
+                getString(R.string.completed_message, summary.totalCompletedExercises, summary.totalExercises)
+        }
     }
 
     private fun setupOnClickListeners() {
