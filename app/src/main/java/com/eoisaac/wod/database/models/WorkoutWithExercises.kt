@@ -10,4 +10,9 @@ data class WorkoutWithExercises(
         entityColumn = "workout_id"
     )
     val exercises: List<Exercise>,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "workout_id"
+    )
+    val workoutHasWeekDay: List<WorkoutHasWeekDay>
 )

@@ -9,13 +9,16 @@ import com.eoisaac.wod.R
 import com.eoisaac.wod.database.AppDatabase
 import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.Workout
+import com.eoisaac.wod.database.models.WorkoutHasWeekDay
 import com.eoisaac.wod.database.repositories.ExerciseRepository
+import com.eoisaac.wod.database.repositories.WorkoutHasWeekDayRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
 import com.eoisaac.wod.entities.WeekDays
 
 class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
     private val workoutRepository: WorkoutRepository
     private val exerciseRepository: ExerciseRepository
+    private val workoutHasWeekDayRepository: WorkoutHasWeekDayRepository
 
     init {
         val database = AppDatabase.getDatabase(app)
@@ -25,6 +28,9 @@ class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
 
         val exerciseDao = database.exerciseDao()
         exerciseRepository = ExerciseRepository(exerciseDao)
+
+        val workoutHasWeekDayDao = database.workoutHasWeekDayDao()
+        workoutHasWeekDayRepository = WorkoutHasWeekDayRepository(workoutHasWeekDayDao)
     }
 
     private val newWorkoutExercises = mutableListOf<Exercise>()
@@ -37,10 +43,15 @@ class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
 
     fun createNewWorkout(name: String, weekDays: List<WeekDays>): Long {
         val weekDaysList = weekDays.map { it.name }
-        val workout = Workout(name = name, weekDays = weekDaysList)
+        val workout = Workout(name = name)
 
         val newWorkoutId = workoutRepository.insert(workout)
-        Log.d("NewWorkout", workout.toString())
+
+        weekDaysList.forEach { weekDay ->
+            val workoutHasWeekDay = WorkoutHasWeekDay(workoutId = newWorkoutId, weekDay = weekDay)
+            workoutHasWeekDayRepository.insert(workoutHasWeekDay)
+            Log.d("NewWorkoutHasWeekDay", workoutHasWeekDay.toString())
+        }
 
         newWorkoutExercises.forEach { exercise ->
             exercise.workoutId = newWorkoutId
@@ -48,6 +59,7 @@ class NewWorkoutViewModel(app: Application) : AndroidViewModel(app) {
             Log.d("NewExercise", exercise.toString())
         }
 
+        Log.d("NewWorkout", workout.toString())
         return newWorkoutId
     }
 }

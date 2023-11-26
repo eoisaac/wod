@@ -9,6 +9,5 @@ data class Workout(
     val id: Long = 0L,
 
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "week_days") val weekDays: List<String>,
 )
 

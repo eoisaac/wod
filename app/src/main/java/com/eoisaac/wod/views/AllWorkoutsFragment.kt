@@ -30,7 +30,6 @@ class AllWorkoutsFragment : Fragment(), WorkoutPressListener {
         binding = FragmentAllWorkoutsBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[AllWorkoutsViewModel::class.java]
 
-
         observeWorkouts()
         setupWorkoutsFilter()
         return binding.root
@@ -51,9 +50,7 @@ class AllWorkoutsFragment : Fragment(), WorkoutPressListener {
     }
 
     private fun observeWorkouts() {
-        viewModel.getAllWorkouts().observe(viewLifecycleOwner) { workouts ->
-            setupRecyclerView(workouts)
-        }
+        viewModel.getAllWorkouts().observe(viewLifecycleOwner) { workouts -> setupRecyclerView(workouts) }
     }
 
     private fun setupRecyclerView(workouts: List<WorkoutWithExercises>) {

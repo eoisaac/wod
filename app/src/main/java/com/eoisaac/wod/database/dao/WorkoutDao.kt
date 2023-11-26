@@ -14,9 +14,8 @@ interface WorkoutDao {
     @Delete
     fun delete(workout: Workout): Int
 
-    // TODO: fix this
     @Transaction
-    @Query("SELECT * FROM workouts WHERE :weekDay IN (week_days)")
+    @Query("SELECT * FROM workouts WHERE id IN (SELECT workout_id FROM workout_has_week_day WHERE week_day = :weekDay)")
     fun getWorkoutsWithExercisesByWeekDay(weekDay: String): LiveData<List<WorkoutWithExercises>>
 
     @Transaction

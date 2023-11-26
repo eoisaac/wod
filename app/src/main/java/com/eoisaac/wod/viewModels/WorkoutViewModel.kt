@@ -31,7 +31,7 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
         exerciseRepository = ExerciseRepository(exerciseDao)
 
         val currentWeekDay = DateUtils.getDateWeekDay(Date())!!
-        dayWorkouts = workoutRepository.getWorkoutsWithExercisesByWeekDay2(currentWeekDay)
+        dayWorkouts = workoutRepository.getWorkoutsWithExercisesByWeekDay(currentWeekDay)
     }
 
     fun getDayWorkouts(): LiveData<List<WorkoutWithExercises>> {

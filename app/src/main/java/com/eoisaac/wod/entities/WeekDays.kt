@@ -1,7 +1,7 @@
 package com.eoisaac.wod.entities
 
 enum class WeekDays(val day: String, val index: Int) {
-    SUNDAY("SUNDAY ", 1),
+    SUNDAY("SUNDAY", 1),
     MONDAY("MONDAY", 2),
     TUESDAY("TUESDAY", 3),
     WEDNESDAY("WEDNESDAY", 4),
