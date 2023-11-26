@@ -35,4 +35,9 @@
     <string name="create_workout_error">Erro ao criar treino</string>
     <string name="exercise_sets_amount">%d séries</string>
     <string name="completed_message">%d de %d completos!</string>
+    <string name="completion_message_0">Você está apenas começando! Continue assim!</string>
+    <string name="completion_message_25">Bom progresso! Você está a um quarto do caminho.</string>
+    <string name="completion_message_50">Metade do caminho! Continue se esforçando!</string>
+    <string name="completion_message_75">Você está quase lá! Só mais alguns para terminar.</string>
+    <string name="completion_message_100">Parabéns! Você concluiu todo o seu treino. Incrível!</string>
 </resources>

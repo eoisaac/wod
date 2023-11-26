@@ -1,18 +1,16 @@
 package com.eoisaac.wod.viewModels
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.eoisaac.wod.R
 import com.eoisaac.wod.database.AppDatabase
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.database.repositories.ExerciseRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
 import com.eoisaac.wod.entities.WorkoutsSummary
 import com.eoisaac.wod.utils.DateUtils
-import com.eoisaac.wod.utils.Greeting
+import com.eoisaac.wod.utils.Messages
 import com.eoisaac.wod.utils.StringContent
 import java.util.Date
 
@@ -37,7 +35,7 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
 
         val currentWeekDay = DateUtils.getDateWeekDay(todayDate)!!
         dayWorkouts = workoutRepository.getWorkoutsWithExercisesByWeekDay(currentWeekDay)
-        greeting.value = Greeting.getTimeBasedGreeting(todayDate)
+        greeting.value = Messages.getTimeBasedGreeting(todayDate)
 
         dayWorkouts.observeForever { workouts -> calculateWorkoutsSummary(workouts) }
     }
@@ -56,14 +54,13 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun calculateWorkoutsSummary(workouts: List<WorkoutWithExercises>) {
         val totalExercises = workouts.sumOf { it.exercises.size }
-        val totalCompletedExercises = workouts.sumOf { workout ->
-            workout.exercises.count { it.completed }
-        }
+        val totalCompletedExercises = workouts.sumOf { workout -> workout.exercises.count { it.completed } }
+        val completedPercentage = (totalCompletedExercises.toDouble() / totalExercises.toDouble() * 100).toInt()
 
         workoutsSummary.value = WorkoutsSummary(
             totalExercises = totalExercises,
             totalCompletedExercises = totalCompletedExercises,
-            completedPercentage = (totalCompletedExercises.toDouble() / totalExercises.toDouble() * 100).toInt(),
+            completedPercentage = completedPercentage,
         )
     }
 }

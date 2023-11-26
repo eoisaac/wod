@@ -36,4 +36,9 @@
     <string name="exercise_sets_amount">%d sets</string>
     <string name="completed_message">%d of %d completed!</string>
     <string name="percentage_progress" translatable="false">%d%%</string>
+    <string name="completion_message_0">You\'re just getting started! Keep it up!</string>
+    <string name="completion_message_25">Good progress! You\'re a quarter of the way there.</string>
+    <string name="completion_message_50">Halfway done! Keep pushing!</string>
+    <string name="completion_message_75">You\'re almost there! Only a few more to go.</string>
+    <string name="completion_message_100">Congratulations! You\'ve completed your entire workout. Amazing!</string>
 </resources>

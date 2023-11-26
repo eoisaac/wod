@@ -1,6 +1,7 @@
 package com.eoisaac.wod.views
 
 import android.os.Bundle
+import android.os.Message
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.eoisaac.wod.R
 import com.eoisaac.wod.adapters.WorkoutsAdapter
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.databinding.FragmentWorkoutBinding
+import com.eoisaac.wod.utils.Messages
 import com.eoisaac.wod.viewModels.WorkoutViewModel
 
 
@@ -66,6 +68,7 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
             circularProgressIndicatorText.text = getString(R.string.percentage_progress, summary.completedPercentage)
             totalExercises.text =
                 getString(R.string.completed_message, summary.totalCompletedExercises, summary.totalExercises)
+            progressMessage.text = Messages.getCompletionMessage(summary.completedPercentage).asString(requireContext())
         }
     }
 

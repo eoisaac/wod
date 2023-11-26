@@ -101,7 +101,6 @@
                         android:id="@+id/total_exercises_text_view"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="6 of 8 completed!"
                         style="@style/BodyTextStyle"
                         app:layout_constraintTop_toBottomOf="@id/progress_message_text_view"
                         app:layout_constraintStart_toStartOf="@id/progress_message_text_view"
