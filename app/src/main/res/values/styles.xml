@@ -52,7 +52,6 @@
         <item name="cardElevation">1dp</item>
         <item name="strokeColor">@color/gray_3</item>
     </style>
-
     <!-- Buttons -->
     <style name="PrimaryLinkButtonStyle" parent="Widget.Material3.Button.TextButton">
         <item name="android:textSize">16sp</item>
