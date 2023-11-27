@@ -13,6 +13,7 @@ import com.eoisaac.wod.R
 import com.eoisaac.wod.adapters.NewExercisesAdapter
 import com.eoisaac.wod.databinding.FragmentNewWorkoutBinding
 import com.eoisaac.wod.entities.WeekDays
+import com.eoisaac.wod.utils.setTopGravity
 import com.eoisaac.wod.viewModels.NewWorkoutViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -45,9 +46,9 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
     private val newExercisesRecyclerView by lazy { binding.newExercisesRecyclerView }
     private val weekDaysCheckboxes by lazy {
         listOf(
-            binding.sundaysCheckbox, binding.tuesdaysCheckbox, binding.wednesdaysCheckbox,
+            binding.sundaysCheckbox, binding.mondaysCheckbox,
+            binding.tuesdaysCheckbox, binding.wednesdaysCheckbox,
             binding.thursdaysCheckbox, binding.fridaysCheckbox, binding.saturdaysCheckbox,
-            binding.mondaysCheckbox,
         )
     }
 
@@ -129,16 +130,14 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
         }
 
         val workoutId = viewModel.createNewWorkout(name, weekDays)
+
+        var message = getString(R.string.create_workout_error)
+
         if (workoutId > 0) {
-            val message = getString(R.string.created_workout)
-            Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
-
+            message = getString(R.string.created_workout)
             resetWorkoutForm()
-
-        } else {
-            val message = getString(R.string.create_workout_error)
-            Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
         }
+        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).setTopGravity().show()
     }
 
     @SuppressLint("NotifyDataSetChanged")
