@@ -41,4 +41,9 @@
     <string name="completion_message_50">Halfway done! Keep pushing!</string>
     <string name="completion_message_75">You\'re almost there! Only a few more to go.</string>
     <string name="completion_message_100">Congratulations! You\'ve completed your entire workout. Amazing!</string>
+    <string name="delete_workout">Delete workout</string>
+    <string name="confirm_delete_workout_message">Are you sure you want to delete this workout?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="deleted_workout_message">Workout deleted successfully!</string>
 </resources>

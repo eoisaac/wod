@@ -40,4 +40,9 @@
     <string name="completion_message_50">Metade do caminho! Continue se esforçando!</string>
     <string name="completion_message_75">Você está quase lá! Só mais alguns para terminar.</string>
     <string name="completion_message_100">Parabéns! Você concluiu todo o seu treino. Incrível!</string>
+    <string name="delete_workout">Deletar treino</string>
+    <string name="confirm_delete_workout_message">Você tem certeza de que deseja excluir este treino?</string>
+    <string name="delete">Excluir</string>
+    <string name="cancel">Cancelar</string>
+    <string name="deleted_workout_message">Treino excuido com sucesso!</string>
 </resources>

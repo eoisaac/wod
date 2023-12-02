@@ -36,7 +36,7 @@ class AllWorkoutsViewModel(app: Application) : AndroidViewModel(app) {
         return allWorkouts
     }
 
-    fun deleteWorkout(workout: WorkoutWithExercises) {
-        workoutRepository.delete(workout.workout)
+    fun deleteWorkout(workout: WorkoutWithExercises): Int {
+        return workoutRepository.delete(workout.workout)
     }
 }

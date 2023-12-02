@@ -60,7 +60,6 @@ class WorkoutsAdapter(
         exercisePressListener = listener
     }
 
-
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(charSequence: CharSequence): FilterResults {

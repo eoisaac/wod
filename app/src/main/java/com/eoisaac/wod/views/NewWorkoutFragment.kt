@@ -13,6 +13,7 @@ import com.eoisaac.wod.R
 import com.eoisaac.wod.adapters.NewExercisesAdapter
 import com.eoisaac.wod.databinding.FragmentNewWorkoutBinding
 import com.eoisaac.wod.entities.WeekDays
+import com.eoisaac.wod.utils.setShape
 import com.eoisaac.wod.utils.setTopGravity
 import com.eoisaac.wod.viewModels.NewWorkoutViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -137,7 +138,7 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
             message = getString(R.string.created_workout)
             resetWorkoutForm()
         }
-        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).setTopGravity().show()
+        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).setTopGravity().setShape().show()
     }
 
     @SuppressLint("NotifyDataSetChanged")
