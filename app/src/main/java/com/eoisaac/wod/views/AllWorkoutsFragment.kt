@@ -11,13 +11,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.adapters.WorkoutsAdapter
+import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.databinding.FragmentAllWorkoutsBinding
+import com.eoisaac.wod.interfaces.ExercisePressListener
 import com.eoisaac.wod.interfaces.WorkoutPressListener
 import com.eoisaac.wod.viewModels.AllWorkoutsViewModel
 
 
-class AllWorkoutsFragment : Fragment(), WorkoutPressListener {
+class AllWorkoutsFragment : Fragment(), WorkoutPressListener, ExercisePressListener {
     private lateinit var binding: FragmentAllWorkoutsBinding
     private lateinit var viewModel: AllWorkoutsViewModel
 
@@ -57,11 +59,14 @@ class AllWorkoutsFragment : Fragment(), WorkoutPressListener {
         allWorkoutsRecyclerView.layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = allWorkoutsRecyclerView
 
-        workoutsAdapter = WorkoutsAdapter(workouts, )
+        workoutsAdapter = WorkoutsAdapter(workouts)
         recyclerView.adapter = workoutsAdapter
         workoutsAdapter.showCheckboxes(false)
         workoutsAdapter.showDeleteButton(true)
 
         workoutsAdapter.setWorkoutPressListener(this)
+        workoutsAdapter.setExercisePressListener(this)
     }
+
+    override fun onCheckPress(exercise: Exercise) {}
 }

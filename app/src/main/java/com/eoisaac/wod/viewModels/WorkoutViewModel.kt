@@ -55,7 +55,7 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun calculateWorkoutsSummary(workouts: List<WorkoutWithExercises>) {
         val totalExercises = workouts.sumOf { it.exercises.size }
-        val totalCompletedExercises = workouts.sumOf { workout -> workout.exercises.count { it.completed } }
+        val totalCompletedExercises = workouts.sumOf { workout -> workout.exercises.count { it.isCompleted } }
         val completedPercentage = (totalCompletedExercises.toDouble() / totalExercises.toDouble() * 100).toInt()
 
         workoutsSummary.value = WorkoutsSummary(

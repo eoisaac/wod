@@ -91,7 +91,7 @@ class WorkoutsAdapter(
 
         init {
             exerciseRecyclerView.layoutManager = LinearLayoutManager(itemView.context)
-            exerciseRecyclerView.adapter = exercisePressListener?.let { ExercisesAdapter(emptyList(), it) }
+            exerciseRecyclerView.adapter = ExercisesAdapter(emptyList())
         }
 
         fun bind(workout: WorkoutWithExercises, showExerciseCheckbox: Boolean, showDeleteButton: Boolean) {
@@ -103,9 +103,10 @@ class WorkoutsAdapter(
                 workoutPressListener?.onDeletePress(workout)
             }
 
-            val exerciseAdapter = exercisePressListener?.let { ExercisesAdapter(workout.exercises, it) }
+            val exerciseAdapter = ExercisesAdapter(workout.exercises)
+            exerciseAdapter.setExercisePressListener(exercisePressListener!!)
             exerciseRecyclerView.adapter = exerciseAdapter
-            exerciseAdapter?.showCheckboxes(showExerciseCheckbox)
+            exerciseAdapter.showCheckboxes(showExerciseCheckbox)
         }
     }
 
