@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.eoisaac.wod.database.AppDatabase
+import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.database.repositories.ExerciseRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
@@ -62,5 +63,9 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
             totalCompletedExercises = totalCompletedExercises,
             completedPercentage = completedPercentage,
         )
+    }
+
+    fun updateExercise(exercise: Exercise) {
+        exerciseRepository.update(exercise)
     }
 }

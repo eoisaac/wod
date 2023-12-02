@@ -57,7 +57,7 @@ class AllWorkoutsFragment : Fragment(), WorkoutPressListener {
         allWorkoutsRecyclerView.layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = allWorkoutsRecyclerView
 
-        workoutsAdapter = WorkoutsAdapter(workouts)
+        workoutsAdapter = WorkoutsAdapter(workouts, )
         recyclerView.adapter = workoutsAdapter
         workoutsAdapter.showCheckboxes(false)
         workoutsAdapter.showDeleteButton(true)

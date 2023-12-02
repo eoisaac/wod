@@ -9,4 +9,7 @@ class ExerciseRepository(private val exerciseDao: ExerciseDao) {
         return exerciseDao.insert(exercise)
     }
 
+    fun update(exercise: Exercise) {
+        exerciseDao.update(exercise)
+    }
 }

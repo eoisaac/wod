@@ -1,7 +1,6 @@
 package com.eoisaac.wod.views
 
 import android.os.Bundle
-import android.os.Message
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,13 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.R
 import com.eoisaac.wod.adapters.WorkoutsAdapter
+import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.databinding.FragmentWorkoutBinding
+import com.eoisaac.wod.interfaces.ExercisePressListener
 import com.eoisaac.wod.utils.Messages
 import com.eoisaac.wod.viewModels.WorkoutViewModel
 
 
-class WorkoutFragment : Fragment(), View.OnClickListener {
+class WorkoutFragment : Fragment(), View.OnClickListener, ExercisePressListener {
     private lateinit var binding: FragmentWorkoutBinding
     private lateinit var viewModel: WorkoutViewModel
 
@@ -51,6 +52,7 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
         recyclerView.adapter = workoutsAdapter
         workoutsAdapter.showCheckboxes(true)
         workoutsAdapter.showDeleteButton(false)
+        workoutsAdapter.setExercisePressListener(this)
     }
 
     private fun observeData() {
@@ -74,6 +76,11 @@ class WorkoutFragment : Fragment(), View.OnClickListener {
 
     private fun setupOnClickListeners() {
         navigateToAllWorkoutsButton.setOnClickListener(this)
+    }
+
+    override fun onCheckPress(exercise: Exercise) {
+        Log.i("WorkoutFragment", "Exercise: $exercise")
+        viewModel.updateExercise(exercise)
     }
 
     override fun onClick(button: View) {

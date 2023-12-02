@@ -1,7 +1,6 @@
 package com.eoisaac.wod.adapters
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +11,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.R
 import com.eoisaac.wod.database.models.WorkoutWithExercises
+import com.eoisaac.wod.interfaces.ExercisePressListener
 import com.eoisaac.wod.interfaces.WorkoutPressListener
 
 
-class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
+class WorkoutsAdapter(
+    private var allWorkouts: List<WorkoutWithExercises>
+) :
     RecyclerView.Adapter<WorkoutsAdapter.WorkoutViewHolder>(), Filterable {
 
     private var workoutPressListener: WorkoutPressListener? = null
+    private var exercisePressListener: ExercisePressListener? = null
 
     private var filteredWorkouts: List<WorkoutWithExercises> = allWorkouts
 
@@ -53,6 +56,11 @@ class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
         workoutPressListener = listener
     }
 
+    fun setExercisePressListener(listener: ExercisePressListener) {
+        exercisePressListener = listener
+    }
+
+
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(charSequence: CharSequence): FilterResults {
@@ -83,7 +91,7 @@ class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
 
         init {
             exerciseRecyclerView.layoutManager = LinearLayoutManager(itemView.context)
-            exerciseRecyclerView.adapter = ExercisesAdapter(emptyList())
+            exerciseRecyclerView.adapter = exercisePressListener?.let { ExercisesAdapter(emptyList(), it) }
         }
 
         fun bind(workout: WorkoutWithExercises, showExerciseCheckbox: Boolean, showDeleteButton: Boolean) {
@@ -95,9 +103,9 @@ class WorkoutsAdapter(private var allWorkouts: List<WorkoutWithExercises>) :
                 workoutPressListener?.onDeletePress(workout)
             }
 
-            val exerciseAdapter = ExercisesAdapter(workout.exercises)
+            val exerciseAdapter = exercisePressListener?.let { ExercisesAdapter(workout.exercises, it) }
             exerciseRecyclerView.adapter = exerciseAdapter
-            exerciseAdapter.showCheckboxes(showExerciseCheckbox)
+            exerciseAdapter?.showCheckboxes(showExerciseCheckbox)
         }
     }
 

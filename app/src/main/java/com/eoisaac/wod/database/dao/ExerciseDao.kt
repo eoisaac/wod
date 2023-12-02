@@ -9,4 +9,6 @@ interface ExerciseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(exercise: Exercise): Long
 
+    @Update
+    fun update(exercise: Exercise): Int
 }

@@ -9,9 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.eoisaac.wod.R
 import com.eoisaac.wod.database.models.Exercise
+import com.eoisaac.wod.interfaces.ExercisePressListener
+import com.eoisaac.wod.interfaces.WorkoutPressListener
 import com.eoisaac.wod.utils.StringContent
 
-class ExercisesAdapter(private val exercises: List<Exercise>) :
+class ExercisesAdapter(private val exercises: List<Exercise>, private var exercisePressListener: ExercisePressListener) :
     RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolder>() {
 
     private var showCheckbox = false
@@ -49,6 +51,12 @@ class ExercisesAdapter(private val exercises: List<Exercise>) :
             setsTextView.text = setsContent.asString(itemView.context)
 
             completeCheckbox.visibility = if (showCheckbox) View.VISIBLE else View.GONE
+            completeCheckbox.isChecked = exercise.completed
+
+            completeCheckbox.setOnCheckedChangeListener { _, isChecked ->
+                exercise.completed = isChecked
+                exercisePressListener?.onCheckPress(exercise)
+            }
         }
     }
 

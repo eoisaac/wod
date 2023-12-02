@@ -17,7 +17,7 @@ data class Exercise(
 
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "sets") val sets: Int,
-    @ColumnInfo(name = "completed") val completed: Boolean = false,
+    @ColumnInfo(name = "completed") var completed: Boolean = false,
 
     @ColumnInfo(name = "workout_id") var workoutId: Long = 0L,
 )
