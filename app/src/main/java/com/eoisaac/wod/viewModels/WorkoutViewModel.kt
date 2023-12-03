@@ -12,6 +12,7 @@ import com.eoisaac.wod.database.repositories.WorkoutRepository
 import com.eoisaac.wod.entities.WorkoutsSummary
 import com.eoisaac.wod.utils.DateUtils
 import com.eoisaac.wod.utils.Messages
+import com.eoisaac.wod.utils.PrefsUtils
 import com.eoisaac.wod.utils.StringContent
 import java.util.Date
 
@@ -51,6 +52,10 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
 
     fun getWorkoutsSummary(): LiveData<WorkoutsSummary> {
         return workoutsSummary
+    }
+
+    fun getUserName(): String {
+        return PrefsUtils["user_name", ""]
     }
 
     private fun calculateWorkoutsSummary(workouts: List<WorkoutWithExercises>) {

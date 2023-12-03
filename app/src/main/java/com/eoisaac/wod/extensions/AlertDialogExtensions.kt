@@ -1,4 +1,4 @@
-package com.eoisaac.wod.utils
+package com.eoisaac.wod.extensions
 
 import androidx.core.content.ContextCompat
 import com.eoisaac.wod.R

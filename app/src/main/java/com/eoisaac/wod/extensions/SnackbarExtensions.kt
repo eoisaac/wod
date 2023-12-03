@@ -1,4 +1,4 @@
-package com.eoisaac.wod.utils
+package com.eoisaac.wod.extensions
 
 import android.view.Gravity
 import android.widget.FrameLayout

@@ -13,8 +13,8 @@ import com.eoisaac.wod.R
 import com.eoisaac.wod.adapters.NewExercisesAdapter
 import com.eoisaac.wod.databinding.FragmentNewWorkoutBinding
 import com.eoisaac.wod.entities.WeekDays
-import com.eoisaac.wod.utils.setShape
-import com.eoisaac.wod.utils.setTopGravity
+import com.eoisaac.wod.extensions.setShape
+import com.eoisaac.wod.extensions.setTopGravity
 import com.eoisaac.wod.viewModels.NewWorkoutViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText

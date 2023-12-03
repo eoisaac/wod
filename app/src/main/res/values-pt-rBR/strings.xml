@@ -45,4 +45,9 @@
     <string name="delete">Excluir</string>
     <string name="cancel">Cancelar</string>
     <string name="deleted_workout_message">Treino excuido com sucesso!</string>
+    <string name="your_name">Seu nome</string>
+    <string name="welcome_message">Bem-vindo ao WoD!</string>
+    <string name="wod_description">Acompanhe seus treinos diários e mantenha-se em forma!</string>
+    <string name="start">Começar</string>
+    <string name="user_name_greeting">Olá %s,</string>
 </resources>

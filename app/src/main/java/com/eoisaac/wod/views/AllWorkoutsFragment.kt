@@ -16,8 +16,8 @@ import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.databinding.FragmentAllWorkoutsBinding
 import com.eoisaac.wod.interfaces.ExercisePressListener
 import com.eoisaac.wod.interfaces.WorkoutPressListener
-import com.eoisaac.wod.utils.setShape
-import com.eoisaac.wod.utils.setTopGravity
+import com.eoisaac.wod.extensions.setShape
+import com.eoisaac.wod.extensions.setTopGravity
 import com.eoisaac.wod.viewModels.AllWorkoutsViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar

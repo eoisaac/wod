@@ -35,9 +35,12 @@ class WorkoutFragment : Fragment(), View.OnClickListener, ExercisePressListener 
 
         observeData()
         setupOnClickListeners()
+        setupUserName()
+
         return binding.root
     }
 
+    private val userNameGreeting by lazy { binding.userNameGreetingTextView }
     private val circularProgressIndicator by lazy { binding.circularProgressIndicator }
     private val circularProgressIndicatorText by lazy { binding.progressIndicatorTextView }
     private val progressMessage by lazy { binding.progressMessageTextView }
@@ -47,6 +50,11 @@ class WorkoutFragment : Fragment(), View.OnClickListener, ExercisePressListener 
     private val navigateToAllWorkoutsButton by lazy { binding.navigateToAllWorkoutsButton }
 
     private val ANIMATION_DURATION = 300L
+
+    private fun setupUserName() {
+        val name = viewModel.getUserName()
+        userNameGreeting.text = getString(R.string.user_name_greeting, name)
+    }
 
     private fun setupRecyclerView(workouts: List<WorkoutWithExercises>) {
         dayWorkoutsRecyclerView.layoutManager = LinearLayoutManager(context)

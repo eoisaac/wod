@@ -13,7 +13,7 @@
             android:padding="24dp"
     >
         <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/greeting_text_view"
+                android:id="@+id/user_name_greeting_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hello Isaac,"
@@ -27,11 +27,10 @@
                 android:id="@+id/time_greeting_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
                 style="@style/BodyTextStyle"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/greeting_text_view"
-                app:layout_constraintTop_toBottomOf="@id/greeting_text_view"
+                app:layout_constraintStart_toStartOf="@id/user_name_greeting_text_view"
+                app:layout_constraintTop_toBottomOf="@id/user_name_greeting_text_view"
         />
 
         <com.google.android.material.card.MaterialCardView
