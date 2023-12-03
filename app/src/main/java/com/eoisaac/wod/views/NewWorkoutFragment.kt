@@ -137,6 +137,7 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
         if (workoutId > 0) {
             message = getString(R.string.created_workout)
             resetWorkoutForm()
+            workoutNameInputField.requestFocus()
         }
         Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).setTopGravity().setShape().show()
     }

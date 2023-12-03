@@ -15,6 +15,9 @@ object PrefsUtils {
     private const val APP_PREFERENCES = "com.eoisaac.wod"
     lateinit var preferences: SharedPreferences
 
+    /**
+     * Initialize the SharedPreferences object.
+     */
     fun init(context: Context) {
         preferences = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
     }
@@ -24,7 +27,7 @@ object PrefsUtils {
         operation(editor)
         editor.apply()
     }
-
+    
     operator fun set(key: String, value: Any?) =
         when (value) {
             is String? -> preferences.edit { it.putString(key, value) }

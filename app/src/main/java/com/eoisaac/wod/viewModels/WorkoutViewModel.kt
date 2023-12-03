@@ -58,6 +58,9 @@ class WorkoutViewModel(app: Application) : AndroidViewModel(app) {
         return PrefsUtils["user_name", ""]
     }
 
+    /**
+     * This method updates the workout's summary values.
+     */
     private fun calculateWorkoutsSummary(workouts: List<WorkoutWithExercises>) {
         val totalExercises = workouts.sumOf { it.exercises.size }
         val totalCompletedExercises = workouts.sumOf { workout -> workout.exercises.count { it.isCompleted } }

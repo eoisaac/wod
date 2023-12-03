@@ -11,13 +11,18 @@ import com.eoisaac.wod.utils.PrefsUtils
 import java.util.*
 
 class WelcomeViewModel(app: Application) : AndroidViewModel(app) {
-    private val SHARED_PREFS_KEY = "com.eoisaac.wod"
 
+    /**
+     * Save the user's name to shared preferences
+     */
     fun saveUserName(name: String): Boolean {
         PrefsUtils["user_name"] = name
         return true
     }
 
+    /**
+     * Get the user's name from shared preferences
+     */
     fun getUserName(): String {
         return PrefsUtils["user_name", ""]
     }

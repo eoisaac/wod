@@ -20,6 +20,11 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         exerciseRepository = ExerciseRepository(exerciseDao)
     }
 
+    /**
+     * This method is called when the app is launched.
+     * It checks if the exercises have been reset for the day.
+     * If not, it resets them.
+     */
     fun validateReset() {
         val lastReset = PrefsUtils["last_reset", ""]
 

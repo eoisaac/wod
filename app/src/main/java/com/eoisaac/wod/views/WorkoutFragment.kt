@@ -104,7 +104,6 @@ class WorkoutFragment : Fragment(), View.OnClickListener, ExercisePressListener 
     }
 
     override fun onCheckPress(exercise: Exercise) {
-        Log.i("WorkoutFragment", "Exercise: $exercise")
         viewModel.updateExercise(exercise)
     }
 

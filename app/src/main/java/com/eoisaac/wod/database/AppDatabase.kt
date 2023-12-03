@@ -11,6 +11,11 @@ import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.Workout
 import com.eoisaac.wod.database.models.WorkoutHasWeekDay
 
+/**
+ * Room database class
+ * Contains the database holder and serves as the main access point for the underlying connection to your app's
+ * persisted, relational data.
+ */
 @Database(
     entities = [
         Exercise::class,
@@ -18,7 +23,6 @@ import com.eoisaac.wod.database.models.WorkoutHasWeekDay
         WorkoutHasWeekDay::class,
     ], version = 1
 )
-//@TypeConverters(DatabaseConverters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun exerciseDao(): ExerciseDao

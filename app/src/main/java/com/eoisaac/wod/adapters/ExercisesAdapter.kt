@@ -1,6 +1,5 @@
 package com.eoisaac.wod.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,11 @@ import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.interfaces.ExercisePressListener
 import com.eoisaac.wod.utils.StringContent
 
+/**
+ * Adapter for the list of exercises in a workout
+ * It's responsible for displaying the exercises and their sets amount
+ * @param exercises List of exercises to display
+ */
 class ExercisesAdapter(private val exercises: List<Exercise>) :
     RecyclerView.Adapter<ExercisesAdapter.ExerciseViewHolder>() {
 
@@ -33,10 +37,18 @@ class ExercisesAdapter(private val exercises: List<Exercise>) :
         return exercises.size
     }
 
+    /**
+     * Set the listener for the checkbox press
+     * @param listener Listener to be called when the checkbox is pressed
+     */
     fun setExercisePressListener(listener: ExercisePressListener) {
         exercisePressListener = listener
     }
 
+    /**
+     * Show or hide the checkbox for each exercise
+     * @param show Boolean to show or hide the checkbox
+     */
     fun showCheckboxes(show: Boolean) {
         showCheckbox = show
     }

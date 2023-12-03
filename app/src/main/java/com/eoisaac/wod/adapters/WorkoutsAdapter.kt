@@ -15,6 +15,11 @@ import com.eoisaac.wod.interfaces.ExercisePressListener
 import com.eoisaac.wod.interfaces.WorkoutPressListener
 
 
+/**
+ * Adapter for the list of workouts
+ * It's responsible for displaying the workouts and their exercises
+ * @param allWorkouts List of workouts to display
+ */
 class WorkoutsAdapter(
     private var allWorkouts: List<WorkoutWithExercises>
 ) :
@@ -43,22 +48,42 @@ class WorkoutsAdapter(
     private var showExercisesCheckbox = false
     private var showDeleteButton = false
 
+    /**
+     * Set the display of the checkbox for each exercise
+     * @param show Boolean to show or hide the checkbox
+     */
     fun showCheckboxes(show: Boolean) {
         showExercisesCheckbox = show
     }
 
+    /**
+     * Set the display of the delete button for each workout
+     * @param show Boolean to show or hide the delete button
+     */
     fun showDeleteButton(show: Boolean) {
         showDeleteButton = show
     }
 
+    /**
+     * Set the listener for the workout press
+     * @param listener Listener to be called when the workout is pressed
+     */
     fun setWorkoutPressListener(listener: WorkoutPressListener) {
         workoutPressListener = listener
     }
 
+    /**
+     * Set the listener for the exercise press
+     * @param listener Listener to be called when the exercise is pressed
+     */
     fun setExercisePressListener(listener: ExercisePressListener) {
         exercisePressListener = listener
     }
 
+    /**
+     * Filter the workouts by name, it's called when the user types in the search input
+     * @return Filter object with the filtered workouts
+     */
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(charSequence: CharSequence): FilterResults {

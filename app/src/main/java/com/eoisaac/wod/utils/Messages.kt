@@ -3,8 +3,17 @@ package com.eoisaac.wod.utils
 import com.eoisaac.wod.R
 import java.util.*
 
+/**
+ * Utility class to handle messages
+ */
 class Messages {
     companion object {
+
+        /**
+         * Get the greeting based on the current time
+         * @param date The date to get the hour from
+         * @return The greeting based on the current time
+         */
         fun getTimeBasedGreeting(date: Date = Date()): StringContent.StringResource {
             val hour = DateUtils.getDateHour(date)
             val greetingResourceId = when (hour) {
@@ -16,6 +25,11 @@ class Messages {
             return StringContent.StringResource(resourceId = greetingResourceId)
         }
 
+        /**
+         * Get the completion message based on the current time
+         * @param percent The percentage of completion
+         * @return The completion message based on the current time
+         */
         fun getCompletionMessage(percent: Int): StringContent.StringResource {
             val completionMessageResourceId = when (percent) {
                 in 0..25 -> R.string.completion_message_0

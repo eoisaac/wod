@@ -10,6 +10,11 @@ import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.utils.StringContent
 import com.google.android.material.button.MaterialButton
 
+/**
+ * Adapter for the list of exercises in a workout
+ * It's responsible for displaying the exercises and their sets amount
+ * @param exercises List of exercises to display
+ */
 class NewExercisesAdapter(private val exercises: MutableList<Exercise>) :
     RecyclerView.Adapter<NewExercisesAdapter.ExerciseViewHolder>() {
 
@@ -29,6 +34,10 @@ class NewExercisesAdapter(private val exercises: MutableList<Exercise>) :
         return exercises.size
     }
 
+    /**
+     * Remove an exercise from the list, given its position it verifies if it's a valid position
+     * @param position Position of the exercise to be removed
+     */
     private fun removeExercise(position: Int) {
         if (position < 0 || position >= exercises.size) return
         exercises.removeAt(position)

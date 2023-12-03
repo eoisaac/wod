@@ -1,5 +1,10 @@
 package com.eoisaac.wod.entities
 
+/**
+ * Enum class to represent the days of the week
+ * @param day The name of the day
+ * @param index The index of the day
+ */
 enum class WeekDays(val day: String, val index: Int) {
     SUNDAY("SUNDAY", 1),
     MONDAY("MONDAY", 2),
