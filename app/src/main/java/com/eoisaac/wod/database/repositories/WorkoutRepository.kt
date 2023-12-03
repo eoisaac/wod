@@ -1,6 +1,5 @@
 package com.eoisaac.wod.database.repositories
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import com.eoisaac.wod.database.dao.WorkoutDao
 import com.eoisaac.wod.database.models.Workout

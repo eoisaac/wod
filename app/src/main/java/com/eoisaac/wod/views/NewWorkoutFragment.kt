@@ -119,8 +119,8 @@ class NewWorkoutFragment : Fragment(), View.OnClickListener {
 
         if (weekDays.isEmpty()) {
             val error = getString(R.string.no_week_days_error)
-            binding.mondaysCheckbox.error = error
-            binding.mondaysCheckbox.requestFocus()
+            binding.sundaysCheckbox.error = error
+            binding.sundaysCheckbox.requestFocus()
             return
         }
 

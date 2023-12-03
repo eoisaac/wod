@@ -2,10 +2,7 @@ package com.eoisaac.wod.viewModels
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
-import androidx.recyclerview.widget.RecyclerView
-import com.eoisaac.wod.R
 import com.eoisaac.wod.database.AppDatabase
 import com.eoisaac.wod.database.models.Exercise
 import com.eoisaac.wod.database.models.Workout

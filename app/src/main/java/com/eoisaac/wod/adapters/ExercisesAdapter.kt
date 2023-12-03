@@ -37,10 +37,8 @@ class ExercisesAdapter(private val exercises: List<Exercise>) :
         exercisePressListener = listener
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun showCheckboxes(show: Boolean) {
         showCheckbox = show
-        notifyDataSetChanged()
     }
 
     inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

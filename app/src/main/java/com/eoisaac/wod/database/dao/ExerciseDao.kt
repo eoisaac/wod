@@ -11,4 +11,8 @@ interface ExerciseDao {
 
     @Update
     fun update(exercise: Exercise): Int
+
+
+    @Query("UPDATE exercises SET is_completed = :isCompleted")
+    fun resetAll(isCompleted: Boolean): Int
 }

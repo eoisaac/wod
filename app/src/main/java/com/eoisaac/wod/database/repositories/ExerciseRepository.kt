@@ -12,4 +12,8 @@ class ExerciseRepository(private val exerciseDao: ExerciseDao) {
     fun update(exercise: Exercise) {
         exerciseDao.update(exercise)
     }
+
+    fun resetAll(isCompleted: Boolean = false) {
+        exerciseDao.resetAll(isCompleted)
+    }
 }

@@ -19,8 +19,8 @@ class Messages {
         fun getCompletionMessage(percent: Int): StringContent.StringResource {
             val completionMessageResourceId = when (percent) {
                 in 0..25 -> R.string.completion_message_0
-                in 26..50 -> R.string.completion_message_25
-                in 51..75 -> R.string.completion_message_50
+                in 26..49 -> R.string.completion_message_25
+                in 50..75 -> R.string.completion_message_50
                 in 76..99 -> R.string.completion_message_75
                 else -> R.string.completion_message_100
             }

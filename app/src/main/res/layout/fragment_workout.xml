@@ -67,13 +67,11 @@
                             app:trackCornerRadius="16dp"
                             app:trackThickness="10dp"
                             app:trackColor="@color/gray_6"
-                            android:progress="75"
                     />
                     <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/progress_indicator_text_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="75%"
                             android:layout_centerInParent="true"
                             android:textAlignment="center"
                             style="@style/SubtitleTextStyle"
@@ -85,7 +83,6 @@
                         android:id="@+id/progress_message_text_view"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Wow! Your daily workout is almost done!"
                         style="@style/BodyTextStyle"
                         android:textStyle="bold"
                         android:textSize="18sp"

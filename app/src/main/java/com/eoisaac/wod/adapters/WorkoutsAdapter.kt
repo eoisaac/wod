@@ -43,7 +43,6 @@ class WorkoutsAdapter(
     private var showExercisesCheckbox = false
     private var showDeleteButton = false
 
-    @SuppressLint("NotifyDataSetChanged")
     fun showCheckboxes(show: Boolean) {
         showExercisesCheckbox = show
     }

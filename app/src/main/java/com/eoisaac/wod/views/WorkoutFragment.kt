@@ -1,5 +1,7 @@
 package com.eoisaac.wod.views
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -44,6 +46,8 @@ class WorkoutFragment : Fragment(), View.OnClickListener, ExercisePressListener 
     private val dayWorkoutsRecyclerView by lazy { binding.dayWorkoutsRecyclerView }
     private val navigateToAllWorkoutsButton by lazy { binding.navigateToAllWorkoutsButton }
 
+    private val ANIMATION_DURATION = 300L
+
     private fun setupRecyclerView(workouts: List<WorkoutWithExercises>) {
         dayWorkoutsRecyclerView.layoutManager = LinearLayoutManager(context)
         val recyclerView: RecyclerView = dayWorkoutsRecyclerView
@@ -66,8 +70,21 @@ class WorkoutFragment : Fragment(), View.OnClickListener, ExercisePressListener 
         }
 
         viewModel.getWorkoutsSummary().observe(viewLifecycleOwner) { summary ->
-            circularProgressIndicator.progress = summary.completedPercentage
-            circularProgressIndicatorText.text = getString(R.string.percentage_progress, summary.completedPercentage)
+            ObjectAnimator.ofInt(circularProgressIndicator, "progress", summary.completedPercentage)
+                .setDuration(ANIMATION_DURATION)
+                .start()
+
+            val oldValue = circularProgressIndicatorText.text.toString().replace("%", "").toIntOrNull() ?: 0
+            val newValue = summary.completedPercentage
+            ValueAnimator.ofInt(oldValue, newValue).apply {
+                duration = ANIMATION_DURATION
+                addUpdateListener { animator ->
+                    val animatedValue = animator.animatedValue as Int
+                    circularProgressIndicatorText.text = getString(R.string.percentage_progress, animatedValue)
+                }
+                start()
+            }
+
             totalExercises.text =
                 getString(R.string.completed_message, summary.totalCompletedExercises, summary.totalExercises)
             progressMessage.text = Messages.getCompletionMessage(summary.completedPercentage).asString(requireContext())

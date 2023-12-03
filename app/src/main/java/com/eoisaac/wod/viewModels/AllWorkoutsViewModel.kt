@@ -1,17 +1,12 @@
 package com.eoisaac.wod.viewModels
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
 import com.eoisaac.wod.database.AppDatabase
 import com.eoisaac.wod.database.models.WorkoutWithExercises
 import com.eoisaac.wod.database.repositories.ExerciseRepository
 import com.eoisaac.wod.database.repositories.WorkoutRepository
-import com.eoisaac.wod.utils.DateUtils
-import kotlinx.coroutines.launch
-import java.util.*
 
 
 class AllWorkoutsViewModel(app: Application) : AndroidViewModel(app) {
